@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
-class i_category extends Model
+class I_category extends Model
 {
     //
     use SoftDeletes;
@@ -24,7 +24,7 @@ class i_category extends Model
 //        return $this->belongsToMany('App\m_i_category_dtl')->withTimestamps()->withPivot('i_category_id');
 //        return $this->hasMany( 'App\m_i_category');
 //        return $this->belongsToMany('App\m_i_category','m_i_category_m_i_category_dtl')->withTimestamps()->withPivot('m_i_category_dtl_id');
-        return $this->belongsToMany('App\m_i_category')->withTimestamps();
+        return $this->belongsToMany('App\M_i_category')->withTimestamps();
     }
 
     public function getMiCategoryAttribute()

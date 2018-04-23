@@ -4,8 +4,8 @@ namespace App\Http\Controllers\masters;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\i_category;
-use App\m_i_category;
+use App\I_category;
+use App\M_i_category;
 
 class IcrelmicController extends Controller
 {
@@ -17,7 +17,7 @@ class IcrelmicController extends Controller
     public function index()
     {
         //
-        $datas = i_category::all();
+        $datas = I_category::all();
         return view('masters.icrelmic',compact('datas'));
 
     }
@@ -30,7 +30,7 @@ class IcrelmicController extends Controller
     public function create()
     {
         //
-        $datas = i_category::all();
+        $datas = I_category::all();
         return view('masters.icategories',compact('datas'));
     }
 
@@ -54,7 +54,7 @@ class IcrelmicController extends Controller
     public function show($id)
     {
         //
-        $data = i_category::findOrFail($id);
+        $data = I_category::findOrFail($id);
         return view('masters.icrelmicshow',compact('data'));
     }
 
@@ -67,8 +67,8 @@ class IcrelmicController extends Controller
     public function edit($id)
     {
         //
-        $mic=m_i_category::pluck('name','id');
-        $data = i_category::findOrFail($id);
+        $mic=M_i_category::pluck('name','id');
+        $data = I_category::findOrFail($id);
         return view('masters.icrelmicedit',compact('data','mic'));
     }
 
@@ -83,7 +83,7 @@ class IcrelmicController extends Controller
     {
         //
         //
-        $data= i_category::findOrFail($id);
+        $data= I_category::findOrFail($id);
         $data->update($request->all());
         $data->m_i_categories()->sync($request->input('mi_category',[]));
 

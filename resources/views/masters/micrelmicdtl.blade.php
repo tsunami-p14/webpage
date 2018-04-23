@@ -3,13 +3,13 @@
 @section('content')
     <h1>Item Category 関連付けるよ</h1>
     <hr>
-    {!! link_to('micrelmicdtl/create', '新規作成', ['class' => 'btn btn-primary']) !!}
+    {{--{!! link_to('micrelmicdtl/create', '新規作成', ['class' => 'btn btn-primary']) !!}--}}
     @foreach($datas as $data)
         <article>
             <h2><a href="{{url('micrelmicdtl',$data->id)}}" >{{$data->name}}</a></h2>
-            <div class="name">
-                詳細:{{$data->name}}
-            </div>
+            {{--<div class="name">--}}
+                {{--詳細:{{$data->name}}--}}
+            {{--</div>--}}
 
             @unless ($data->m_i_category_dtls->isEmpty())
             <h5>m_i_category_dtls:</h5>

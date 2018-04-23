@@ -11,7 +11,7 @@
 
     <br>
 
-    {!! link_to(action('masters\icategoryController@edit',[$data->id]),'編集',['class'=>'btn btn-primary']) !!}
+    {!! link_to(action('masters\IcategoryController@edit',[$data->id]),'編集',['class'=>'btn btn-primary']) !!}
     {!! delete_form(['icategories',$data->id]) !!}
 
 @stop

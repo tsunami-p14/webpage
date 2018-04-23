@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\masters;
 
-use App\m_i_category;
+use App\M_i_category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\i_category;
-use App\m_i_category_dtl;
+use App\I_category;
+use App\M_i_category_dtl;
 
 class MicrelmicdtlController extends Controller
 {
@@ -18,7 +18,7 @@ class MicrelmicdtlController extends Controller
     public function index()
     {
         //
-        $datas = m_i_category::all();
+        $datas = M_i_category::all();
         return view('masters.micrelmicdtl',compact('datas'));
     }
 
@@ -52,7 +52,7 @@ class MicrelmicdtlController extends Controller
     public function show($id)
     {
         //
-        $data = m_i_category::findOrFail($id);
+        $data = M_i_category::findOrFail($id);
         return view('masters.micrelmicdtlshow',compact('data'));
 
     }
@@ -66,8 +66,8 @@ class MicrelmicdtlController extends Controller
     public function edit($id)
     {
         //
-        $micdtl=m_i_category_dtl::pluck('name','id');
-        $data = m_i_category::findOrFail($id);
+        $micdtl=M_i_category_dtl::pluck('name','id');
+        $data = M_i_category::findOrFail($id);
         return view('masters.micrelmicdtledit',compact('data','micdtl'));
 
     }
@@ -82,7 +82,7 @@ class MicrelmicdtlController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $data= m_i_category::findOrFail($id);
+        $data= M_i_category::findOrFail($id);
         $data->update($request->all());
         $data->m_i_category_dtls()->sync($request->input('mi_categorydtl',[]));
 

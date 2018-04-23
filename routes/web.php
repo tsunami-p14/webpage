@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::resource('makers', 'masters\MakerController');
 Route::resource('micategories', 'masters\MicategoryController');
 Route::resource('micategorydtls', 'masters\MicategorydtlController');
-Route::resource('icategories', 'masters\icategoryController');
+Route::resource('icategories', 'masters\IcategoryController');
 Route::resource('micrelmicdtl', 'masters\MicrelmicdtlController');
 Route::resource('icrelmic', 'masters\IcrelmicController');
 Route::resource('mifunctiondtls', 'masters\MifunctiondtlController');

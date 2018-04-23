@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\masters;
 
 use App\Http\Requests\MifunctiondtlsRequest;
-use App\m_i_function_dtl;
+use App\M_i_function_dtl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,7 +17,7 @@ class MifunctiondtlController extends Controller
     public function index()
     {
         //
-        $datas = m_i_function_dtl::all();
+        $datas = M_i_function_dtl::all();
 
         return view('masters.mifunctiondtls',compact('datas'));
     }
@@ -42,7 +42,7 @@ class MifunctiondtlController extends Controller
     public function store(MifunctiondtlsRequest $request)
     {
         //
-        m_i_function_dtl::create($request->all());
+        M_i_function_dtl::create($request->all());
         \Session::flash('flash_message','M Item function dtls 情報を追加しました');
         return redirect('mifunctiondtls');
     }
@@ -50,26 +50,26 @@ class MifunctiondtlController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\m_i_function_dtl  $m_i_function_dtl
+     * @param  \App\M_i_function_dtl  $m_i_function_dtl
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         //
-        $data = m_i_function_dtl::findOrFail($id);
+        $data = M_i_function_dtl::findOrFail($id);
         return view('masters.mifunctiondtlsshow',compact('data'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\m_i_function_dtl  $m_i_function_dtl
+     * @param  \App\M_i_function_dtl  $m_i_function_dtl
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         //
-        $data = m_i_function_dtl::findOrFail($id);
+        $data = M_i_function_dtl::findOrFail($id);
         return view('masters.mifunctiondtlsedit',compact('data'));
 
     }
@@ -78,13 +78,13 @@ class MifunctiondtlController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\m_i_function_dtl  $m_i_function_dtl
+     * @param  \App\M_i_function_dtl  $m_i_function_dtl
      * @return \Illuminate\Http\Response
      */
     public function update(MifunctiondtlsRequest $request, $id)
     {
         //
-        $data= m_i_function_dtl::findOrFail($id);
+        $data= M_i_function_dtl::findOrFail($id);
         $data->update($request->all());
         \Session::flash('flash_message','M Item Category 情報を更新しました');
         return view('masters.mifunctiondtlsshow',compact('data'));
@@ -93,13 +93,13 @@ class MifunctiondtlController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\m_i_function_dtl  $m_i_function_dtl
+     * @param  \App\M_i_function_dtl  $m_i_function_dtl
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        $data = m_i_function_dtl::findOrFail($id);
+        $data = M_i_function_dtl::findOrFail($id);
         $data->delete();
         \Session::flash('flash_message','M Item function 情報を削除しました');
 

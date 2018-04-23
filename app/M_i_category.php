@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
-class m_i_category extends Model
+class M_i_category extends Model
 {
 
     use SoftDeletes;
@@ -21,7 +21,7 @@ class m_i_category extends Model
 
     public function m_i_category_dtls()
     {
-        return $this->belongsToMany('App\m_i_category_dtl')->withTimestamps();
+        return $this->belongsToMany('App\M_i_category_dtl')->withTimestamps();
     }
 
     public function getMiCategorydtlAttribute()

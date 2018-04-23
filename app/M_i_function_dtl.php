@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
-class m_i_function_dtl extends Model
+class M_i_function_dtl extends Model
 {
     //
     use SoftDeletes;

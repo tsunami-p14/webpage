@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\masters;
 
-use App\m_maker;
+use App\M_maker;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MakerRequest;
@@ -17,7 +17,7 @@ class MakerController extends Controller
     public function index()
     {
         //
-        $datas = m_maker::all();
+        $datas = M_maker::all();
         return view('masters.makers',compact('datas'));
 
     }
@@ -42,7 +42,7 @@ class MakerController extends Controller
     public function store(MakerRequest $request)
     {
         //
-        m_maker::create($request->all());
+        M_maker::create($request->all());
         \Session::flash('flash_message','メーカー情報を追加しました');
         return redirect('makers');
     }
@@ -56,7 +56,7 @@ class MakerController extends Controller
     public function show($id)
     {
         //
-        $data = m_maker::findOrFail($id);
+        $data = M_maker::findOrFail($id);
         return view('masters.makershow',compact('data'));
     }
 
@@ -69,7 +69,7 @@ class MakerController extends Controller
     public function edit($id)
     {
         //
-        $data = m_maker::findOrFail($id);
+        $data = M_maker::findOrFail($id);
         return view('masters.makeredit',compact('data'));
 
 //        return ($id);
@@ -85,7 +85,7 @@ class MakerController extends Controller
     public function update(MakerRequest $request, $id)
     {
         //
-        $data= m_maker::findOrFail($id);
+        $data= M_maker::findOrFail($id);
         $data->update($request->all());
         \Session::flash('flash_message','メーカー情報を更新しました');
 //        return redirect()->route('masters.makershow',[$data->id]);
@@ -102,7 +102,7 @@ class MakerController extends Controller
     public function destroy($id)
     {
         //
-        $data = m_maker::findOrFail($id);
+        $data = M_maker::findOrFail($id);
         $data->delete();
         \Session::flash('flash_message','メーカー情報を削除しました');
 

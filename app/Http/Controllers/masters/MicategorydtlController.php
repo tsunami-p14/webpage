@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\masters;
 
 use App\Http\Requests\MicategorydtlRequest;
-use App\m_i_category_dtl;
+use App\M_i_category_dtl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,7 +17,7 @@ class MicategorydtlController extends Controller
     public function index()
     {
         //
-        $datas = m_i_category_dtl::all();
+        $datas = M_i_category_dtl::all();
         return view('masters.micategorydtls',compact('datas'));
     }
 
@@ -42,7 +42,7 @@ class MicategorydtlController extends Controller
     public function store(MicategorydtlRequest $request)
     {
         //
-        m_i_category_dtl::create($request->all());
+        M_i_category_dtl::create($request->all());
         \Session::flash('flash_message','M Item Category DTL 情報を追加しました');
         return redirect('micategorydtls');
     }
@@ -56,7 +56,7 @@ class MicategorydtlController extends Controller
     public function show($id)
     {
         //
-        $data = m_i_category_dtl::findOrFail($id);
+        $data = M_i_category_dtl::findOrFail($id);
         return view('masters.micategorydtlshow',compact('data'));
     }
 
@@ -69,7 +69,7 @@ class MicategorydtlController extends Controller
     public function edit($id)
     {
         //
-        $data = m_i_category_dtl::findOrFail($id);
+        $data = M_i_category_dtl::findOrFail($id);
         return view('masters.micategorydtledit',compact('data'));
 
     }
@@ -84,7 +84,7 @@ class MicategorydtlController extends Controller
     public function update(MicategorydtlRequest $request, $id)
     {
         //
-        $data= m_i_category_dtl::findOrFail($id);
+        $data= M_i_category_dtl::findOrFail($id);
         $data->update($request->all());
         \Session::flash('flash_message','M Item Category DTL 情報を更新しました');
         return view('masters.micategorydtlshow',compact('data'));
@@ -99,7 +99,7 @@ class MicategorydtlController extends Controller
     public function destroy($id)
     {
         //
-        $data = m_i_category_dtl::findOrFail($id);
+        $data = M_i_category_dtl::findOrFail($id);
         $data->delete();
         \Session::flash('flash_message','M Item Category DTL 情報を削除しました');
 

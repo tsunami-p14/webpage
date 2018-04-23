@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\masters;
 
-use App\i_category;
-use App\m_i_category;
-use App\m_i_category_dtl;
+use App\I_category;
+use App\M_i_category;
+use App\M_i_category_dtl;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\IcategoryRequest;
 
-class icategoryController extends Controller
+class IcategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class icategoryController extends Controller
     public function index()
     {
         //
-        $datas = i_category::all();
+        $datas = I_category::all();
         return view('masters.icategories',compact('datas'));
 //        $datas = m_i_category::pluck('name','id');
 //        return view('masters.icategories',compact('datas'));
@@ -33,8 +33,8 @@ class icategoryController extends Controller
     public function create()
     {
         //
-        $mic=m_i_category::pluck('name','id');
-        $micdtl=m_i_category_dtl::pluck('name','id');
+        $mic=M_i_category::pluck('name','id');
+        $micdtl=M_i_category_dtl::pluck('name','id');
         return view('masters.icategorycreate',compact('mic','micdtl'));
     }
 
@@ -47,7 +47,7 @@ class icategoryController extends Controller
     public function store(IcategoryRequest $request)
     {
         //
-        $response=i_category::create($request->all());
+        $response=I_category::create($request->all());
 
 //        $response->mics()->attach($request->input('mi_category'),['i_category_id'=>$response->id]);
 //        $response->m_i_categories()->sync($request->input('mi_category'),$request->input('mi_categorydtl'));
@@ -66,7 +66,7 @@ class icategoryController extends Controller
     public function show($id)
     {
         //
-        $data = i_category::findOrFail($id);
+        $data = I_category::findOrFail($id);
         return view('masters.icategoryshow',compact('data'));
     }
 
@@ -79,9 +79,9 @@ class icategoryController extends Controller
     public function edit($id)
     {
         //
-        $mic=m_i_category::pluck('name','id');
-        $micdtl=m_i_category_dtl::pluck('name','id');
-        $data = i_category::findOrFail($id);
+        $mic=M_i_category::pluck('name','id');
+        $micdtl=M_i_category_dtl::pluck('name','id');
+        $data = I_category::findOrFail($id);
         return view('masters.icategoryedit',compact('data','mic','micdtl'));
     }
 
@@ -95,7 +95,7 @@ class icategoryController extends Controller
     public function update(IcategoryRequest $request, $id)
     {
         //
-        $data= i_category::findOrFail($id);
+        $data= I_category::findOrFail($id);
         $data->update($request->all());
         \Session::flash('flash_message','Item Category 情報を更新しました');
         return view('masters.icategoryshow',compact('data'));
@@ -110,7 +110,7 @@ class icategoryController extends Controller
     public function destroy($id)
     {
         //
-        $data = i_category::findOrFail($id);
+        $data = I_category::findOrFail($id);
         $data->delete();
         \Session::flash('flash_message','Item Category 情報を削除しました');
 

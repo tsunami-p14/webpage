@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\masters;
 
 use App\Http\Requests\MicategoryRequest;
-use App\m_i_category;
+use App\M_i_category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,7 +17,7 @@ class MicategoryController extends Controller
     public function index()
     {
         //
-        $datas = m_i_category::all()->sortBy('sort_order');
+        $datas = M_i_category::all()->sortBy('sort_order');
         return view('masters.micategories',compact('datas'));
     }
 
@@ -42,7 +42,7 @@ class MicategoryController extends Controller
     public function store(MicategoryRequest $request)
     {
         //
-        m_i_category::create($request->all());
+        M_i_category::create($request->all());
         \Session::flash('flash_message','M Item Category 情報を追加しました');
         return redirect('micategories');
     }
@@ -56,7 +56,7 @@ class MicategoryController extends Controller
     public function show($id)
     {
         //
-        $data = m_i_category::findOrFail($id);
+        $data = M_i_category::findOrFail($id);
         return view('masters.micategoryshow',compact('data'));
 
     }
@@ -70,7 +70,7 @@ class MicategoryController extends Controller
     public function edit($id)
     {
         //
-        $data = m_i_category::findOrFail($id);
+        $data = M_i_category::findOrFail($id);
         return view('masters.micategoryedit',compact('data'));
     }
 
@@ -84,7 +84,7 @@ class MicategoryController extends Controller
     public function update(MicategoryRequest $request, $id)
     {
         //
-        $data= m_i_category::findOrFail($id);
+        $data= M_i_category::findOrFail($id);
         $data->update($request->all());
         \Session::flash('flash_message','M Item Category 情報を更新しました');
         return view('masters.micategoryshow',compact('data'));
@@ -99,7 +99,7 @@ class MicategoryController extends Controller
     public function destroy($id)
     {
         //
-        $data = m_i_category::findOrFail($id);
+        $data = M_i_category::findOrFail($id);
         $data->delete();
         \Session::flash('flash_message','M Item Category 情報を削除しました');
 

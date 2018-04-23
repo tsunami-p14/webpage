@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\masters;
 
-use App\i_function;
+use App\I_function;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,7 +16,7 @@ class IfunctionController extends Controller
     public function index()
     {
         //
-        $datas = i_function::all();
+        $datas = I_function::all();
         return view('masters.ifunctions',compact('datas'));
     }
 
@@ -40,7 +40,7 @@ class IfunctionController extends Controller
     public function store(Request $request)
     {
         //
-        $response=i_function::create($request->all());
+        $response=I_function::create($request->all());
 
         \Session::flash('flash_message','item Function 情報を追加しました');
         return redirect('ifunctions');
@@ -49,13 +49,13 @@ class IfunctionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\i_function  $i_function
+     * @param  \App\I_function  $i_function
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         //
-        $data = i_function::findOrFail($id);
+        $data = I_function::findOrFail($id);
         return view('masters.ifunctionshow',compact('data'));
 
     }
@@ -63,13 +63,13 @@ class IfunctionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\i_function  $i_function
+     * @param  \App\I_function  $i_function
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         //
-        $data = i_function::findOrFail($id);
+        $data = I_function::findOrFail($id);
         return view('masters.ifunctionedit',compact('data') );
     }
 
@@ -77,13 +77,13 @@ class IfunctionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\i_function  $i_function
+     * @param  \App\I_function  $i_function
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request,$id)
     {
         //
-        $data= i_function::findOrFail($id);
+        $data= I_function::findOrFail($id);
         $data->update($request->all());
         \Session::flash('flash_message','I Function 情報を更新しました');
         return view('masters.ifunctionshow',compact('data'));
@@ -92,13 +92,13 @@ class IfunctionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\i_function  $i_function
+     * @param  \App\I_function  $i_function
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        $data = i_function::findOrFail($id);
+        $data = I_function::findOrFail($id);
         $data->delete();
         \Session::flash('flash_message','Item Function 情報を削除しました');
 
