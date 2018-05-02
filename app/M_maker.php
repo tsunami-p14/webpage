@@ -18,4 +18,7 @@ class M_maker extends Model
      */
     protected $dates = ['deleted_at'];
     protected $fillable = ['name', 'name_a', 'infor'];
+
+
+
 }

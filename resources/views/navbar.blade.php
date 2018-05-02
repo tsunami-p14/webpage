@@ -1,4 +1,7 @@
 {{-- resouces/views/navbar.blade.php --}}
+
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 <a class="navbar-brand" href="#">ブランド</a>
 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
@@ -71,3 +74,10 @@
     </form>
 </div><!-- /.navbar-collapse -->
 </nav>
+
+{{--<script>--}}
+    {{--import Navbar from "bootstrap-vue/es/components/navbar/navbar";--}}
+    {{--export default {--}}
+        {{--components: {Navbar}--}}
+    {{--}--}}
+{{--</script>--}}

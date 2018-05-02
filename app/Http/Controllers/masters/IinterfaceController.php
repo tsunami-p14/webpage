@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\masters;
 
-use App\I_function;
 use App\Http\Requests\IfunctionRequest;
+use App\I_interface;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class IfunctionController extends Controller
+class IinterfaceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,8 @@ class IfunctionController extends Controller
     public function index()
     {
         //
-        $datas = I_function::all();
-        return view('masters.ifunctions',compact('datas'));
+        $datas = I_interface::all();
+        return view('masters.iinterfaces',compact('datas'));
     }
 
     /**
@@ -29,7 +29,7 @@ class IfunctionController extends Controller
     public function create()
     {
         //
-        return view('masters.ifunctioncreate');
+        return view('masters.iinterfacecreate');
     }
 
     /**
@@ -41,69 +41,69 @@ class IfunctionController extends Controller
     public function store(IfunctionRequest $request)
     {
         //
-        $response=I_function::create($request->all());
+        $response=I_interface::create($request->all());
 
-        \Session::flash('flash_message','item Function 情報を追加しました');
-        return redirect('ifunctions');
+        \Session::flash('flash_message','item Interface 情報を追加しました');
+        return redirect('iinterface');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\I_function  $i_function
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         //
-        $data = I_function::findOrFail($id);
-        return view('masters.ifunctionshow',compact('data'));
-
+        $data = I_interface::findOrFail($id);
+        return view('masters.iinterfaceshow',compact('data'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\I_function  $i_function
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         //
-        $data = I_function::findOrFail($id);
-        return view('masters.ifunctionedit',compact('data') );
+        $data = I_interface::findOrFail($id);
+        return view('masters.iinterfaceedit',compact('data'));
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\I_function  $i_function
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(IfunctionRequest $request,$id)
+    public function update(IfunctionRequest $request, $id)
     {
         //
-        $data= I_function::findOrFail($id);
+        $data= I_interface::findOrFail($id);
         $data->update($request->all());
-        \Session::flash('flash_message','I Function 情報を更新しました');
-        return view('masters.ifunctionshow',compact('data'));
+        \Session::flash('flash_message','Interface情報を更新しました');
+        return view('masters.iinterfaceshow',compact('data'));
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\I_function  $i_function
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        $data = I_function::findOrFail($id);
+        $data = I_interface::findOrFail($id);
         $data->delete();
-        \Session::flash('flash_message','Item Function 情報を削除しました');
+        \Session::flash('flash_message','Interface情報を削除しました');
 
-        return redirect('ifunctions');
-
+        return redirect('iinterface');
     }
 }

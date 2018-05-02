@@ -4,34 +4,21 @@
 
     <h1>Item Category Masters 関連付けるよ</h1>
     <hr>
-    <article>
-        <div>
-            <div id="app">
-                    <ul id="stable">
-                        @foreach($datas as $data)
-                           <li>{{$data->name}}</li>
-                            <button-counter></button-counter>
-                        @endforeach
-                    </ul>
-            </div>
-        </div>
 
-    </article>
-    <script src="{{ mix('js/app.js') }}"></script>
+    {{--Vueのサンプル。--}}
+    {{--<article>--}}
+        {{--<div>--}}
+            {{--<ul id="stable">--}}
+                {{--@foreach($datas as $data)--}}
+                   {{--<li>{{$data->name}}</li>--}}
+                    {{--<example-test></example-test>--}}
+                    {{--<example-test :data="{{$data}}"></example-test>--}}
+                    {{--<button-counter></button-counter>--}}
+                {{--@endforeach--}}
+            {{--</ul>--}}
+        {{--</div>--}}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    {{--</article>--}}
 
     {{--{!! link_to('icrelmic/create', '新規作成', ['class' => 'btn btn-primary']) !!}--}}
     @foreach($datas as $data)

@@ -21,7 +21,6 @@ try {
  */
 
 window.axios = require('axios');
-
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
@@ -54,3 +53,4 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+

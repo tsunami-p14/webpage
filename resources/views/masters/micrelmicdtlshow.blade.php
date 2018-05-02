@@ -20,6 +20,6 @@
     <br>
 
     {!! link_to(action('masters\MicrelmicdtlController@edit',[$data->id]),'編集',['class'=>'btn btn-primary']) !!}
-    {!! delete_form(['micrelmicdtl',$data->id]) !!}
+    {{--{!! delete_form(['micrelmicdtl',$data->id]) !!}--}}
 
 @stop

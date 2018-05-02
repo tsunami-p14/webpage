@@ -13,4 +13,16 @@ class I_function extends Model
     protected $dates = ['deleted_at'];
     protected $fillable = ['name'];
 
+    public function m_i_function_dtls()
+    {
+        return $this->belongsToMany('App\M_i_function_dtl')->withTimestamps();
+    }
+
+    public function getMifunctiondtlAttribute()
+    {
+        return $this->m_i_function_dtls->pluck('id')->all();
+    }
+
+
+
 }

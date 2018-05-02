@@ -1,22 +1,24 @@
 @extends('layout')
 
 @section('content')
-    <h1>MasterItem DTL 関連付けるよ</h1>
+
+    <h1>Interface 関連付けるよ</h1>
     <hr>
-    {{--{!! link_to('micrelmicdtl/create', '新規作成', ['class' => 'btn btn-primary']) !!}--}}
+
     @foreach($datas as $data)
         <article>
-            <h2><a href="{{url('micrelmicdtl',$data->id)}}" >{{$data->name}}</a></h2>
+            <h2><a href="{{url('reliinterfacemiinterface',$data->id)}}" >{{$data->name}}</a></h2>
             {{--<div class="name">--}}
-                {{--詳細:{{$data->name}}--}}
+            {{--詳細:{{$data->name}}--}}
             {{--</div>--}}
 
-            @unless ($data->m_i_category_dtls->isEmpty())
-            <h5>m_i_category_dtls:</h5>
-            <ul>
-            @foreach($data->m_i_category_dtls as $m_i_category_dtl)
-            <li>{{ $m_i_category_dtl->name }} {{ $m_i_category_dtl->infor}} </li>
-            @endforeach
+            @unless ($data->m_i_interfaces->isEmpty())
+                <h5>マスタ Interface 詳細</h5>
+                <ul>
+                    @foreach($data->m_i_interfaces as $m_i_interface)
+                        <li>Name:{{ $m_i_interface->name }} 詳細:{{ $m_i_interface->infor}} </li>
+                    @endforeach
+                </ul>
             @endunless
 
 

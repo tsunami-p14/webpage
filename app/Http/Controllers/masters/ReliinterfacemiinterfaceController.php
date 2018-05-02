@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\masters;
 
-use App\I_function;
-use App\Http\Requests\IfunctionRequest;
+use App\I_interface;
+use App\M_i_interface;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class IfunctionController extends Controller
+
+class ReliinterfacemiinterfaceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +18,8 @@ class IfunctionController extends Controller
     public function index()
     {
         //
-        $datas = I_function::all();
-        return view('masters.ifunctions',compact('datas'));
+        $datas = I_interface::all();
+        return view('masters.reliinterfacemiinterface',compact('datas'));
     }
 
     /**
@@ -29,7 +30,6 @@ class IfunctionController extends Controller
     public function create()
     {
         //
-        return view('masters.ifunctioncreate');
     }
 
     /**
@@ -38,72 +38,66 @@ class IfunctionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(IfunctionRequest $request)
+    public function store(Request $request)
     {
         //
-        $response=I_function::create($request->all());
-
-        \Session::flash('flash_message','item Function 情報を追加しました');
-        return redirect('ifunctions');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\I_function  $i_function
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         //
-        $data = I_function::findOrFail($id);
-        return view('masters.ifunctionshow',compact('data'));
-
+        $data = I_interface::findOrFail($id);
+        return view('masters.reliinterfacemiinterfaceshow',compact('data'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\I_function  $i_function
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         //
-        $data = I_function::findOrFail($id);
-        return view('masters.ifunctionedit',compact('data') );
+        $mfncdtl= M_i_interface::pluck('name','id');
+        $data = I_interface::findOrFail($id);
+        return view('masters.reliinterfacemiinterfaceedit',compact('data','mfncdtl'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\I_function  $i_function
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(IfunctionRequest $request,$id)
+    public function update(Request $request, $id)
     {
         //
-        $data= I_function::findOrFail($id);
+        $data= I_interface::findOrFail($id);
         $data->update($request->all());
-        \Session::flash('flash_message','I Function 情報を更新しました');
-        return view('masters.ifunctionshow',compact('data'));
+        $data->m_i_interfaces()->sync($request->input('mi_interface',[]));
+
+        \Session::flash('flash_message','Item Interfaceと詳細情報のrelationを更新しました');
+        return view('masters.reliinterfacemiinterfaceshow',compact('data'));
+
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\I_function  $i_function
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        $data = I_function::findOrFail($id);
-        $data->delete();
-        \Session::flash('flash_message','Item Function 情報を削除しました');
-
-        return redirect('ifunctions');
-
     }
 }
