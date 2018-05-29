@@ -11,22 +11,35 @@
 
                 <b-nav-item-dropdown text="Masters">
                     <b-dropdown-item href="/makers">Makers</b-dropdown-item>
-                    <b-dropdown-item href="/micategories">Micategory</b-dropdown-item>
-                    <b-dropdown-item href="/mifunctiondtls">MicategoryDTL</b-dropdown-item>
-                    <b-dropdown-item href="/icategories">icategory</b-dropdown-item>
-                    <b-dropdown-item href="/mifunctiondtls">MiFunctiondtl</b-dropdown-item>
-                    <b-dropdown-item href="/ifunctions">ifunctions</b-dropdown-item>
-                    <b-dropdown-item href="/iinterface">iinterface</b-dropdown-item>
-                    <b-dropdown-item href="/miinterface">miinterface</b-dropdown-item>
-                </b-nav-item-dropdown>
+                    <b-dropdown-item href="/micategories">カテゴリマスタ</b-dropdown-item>
+                    <b-dropdown-item href="/mifunctiondtls">カテゴリ詳細</b-dropdown-item>
+                    <b-dropdown-item href="/icategories">カテゴリ</b-dropdown-item>
+                    <b-dropdown-item href="/mifunctiondtls">ファンクションマスタ</b-dropdown-item>
+                    <b-dropdown-item href="/ifunctions">ファンクション</b-dropdown-item>
+                    <b-dropdown-item href="/miinterface">インタフェイスマスタ</b-dropdown-item>
+                    <b-dropdown-item href="/iinterface">インタフェイス</b-dropdown-item>
+                    <b-dropdown-item href="/msupplies">サプライマスタ</b-dropdown-item>
+                    <b-dropdown-item href="/isupplies">サプライ</b-dropdown-item>
+                    <b-dropdown-item href="/miqualitycategories">クオリティマスタ</b-dropdown-item>
+                    <b-dropdown-item href="/iqualitylvls">クオリティグループ</b-dropdown-item>
+                    <b-dropdown-item href="/mshops">ショップマスタ</b-dropdown-item>
+                    <b-dropdown-item href="/shelves">棚マスタ</b-dropdown-item>
+                    <b-dropdown-item href="/locations">ロケーション</b-dropdown-item>
 
+                </b-nav-item-dropdown>
 
                 <b-nav-item-dropdown text="Relation">
                     <b-dropdown-item href="/micrelmicdtl">micrelmicdtl</b-dropdown-item>
                     <b-dropdown-item href="/icrelmic">icrelmic</b-dropdown-item>
                     <b-dropdown-item href="/ifunrelmifunc">ifunrelmifunc</b-dropdown-item>
                     <b-dropdown-item href="/reliinterfacemiinterface">Interface</b-dropdown-item>
+                    <b-dropdown-item href="/mitems">M Items</b-dropdown-item>
+                    <b-dropdown-item href="/relisupplymsupply">Supply</b-dropdown-item>
+                    <b-dropdown-item href="/reliqualitylvlmiqltycategories">Quality GROUP</b-dropdown-item>
+                    <b-dropdown-item href="/rellocationshelves">Shelf-Location</b-dropdown-item>
+
                 </b-nav-item-dropdown>
+
             </b-navbar-nav>
 
 

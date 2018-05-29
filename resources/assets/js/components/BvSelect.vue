@@ -1,19 +1,21 @@
 <template>
+    <!--<div class="container-fluid">-->
     <div class="row">
         <div class="col-sm-4">
-            <div class="panel panel-default">
+            <div class="card">
                 <!--<div>name:{{makers}}!&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</div>-->
                 <!--セレクト同期。上で選んだものが下でも選ばれる START-->
-                    <!--<b-form-select v-model="selected" :options="makerinfor" class="mb-3" size="sm" />-->
-                    <!--<div>Selected: <strong>{{ selected }}</strong></div>-->
+                <!--<b-form-select v-model="selected" :options="makerinfor" class="mb-3" size="sm" />-->
+                <!--<div>Selected: <strong>{{ selected }}</strong></div>-->
                 <!--セレクト同期。上で選んだものが下でも選ばれる End-->
 
-                <div class="panel-heading">
-                   <h2>Makers</h2>
+                <div class="card-header">
+                    <h2>Makers</h2>
                 </div>
 
-                <div class="panel-body">
-                    <b-form-select v-model="selected" :options="makers" class="form-control" id="makers" name="m_maker_id"/>
+                <div class="card-body">
+                    <b-form-select v-model="selected" :options="makers" class="form-control" id="makers"
+                                   name="m_maker_id"/>
                     <div>
                         name:<br><strong>{{makers[selected]}}</strong><br>
                     </div>
@@ -22,14 +24,16 @@
                     </div>
                 </div>
             </div>
+            <hr class="d-sm-none">
         </div>
         <div class="col-sm-6">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card">
+                <div class="card-header">
                     <h2>category</h2>
                 </div>
-                <div class="panel-body">
-                    <b-form-select v-model="selcategory" :options="icategory" class="form-control" name="i_category_id" />
+                <div class="card-body">
+                    <b-form-select v-model="selcategory" :options="icategory" class="form-control"
+                                   name="i_category_id"/>
                     <div>
                         <div v-for="item in icategoryall">
                             <div v-if="item.id==selcategory">
@@ -40,27 +44,16 @@
                                         <div v-for="micategory in item.m_i_categories">
                                             <ul>
                                                 <li>
-                                                    {{micategory.name}}
-                                                    <ul>
-                                                        <li>
-                                                            {{micategory.infor}}
-                                                            <div v-for="micategorydtl in micategory.m_i_category_dtls">
-                                                                <ul>
-                                                                    <li>
-                                                                        {{micategorydtl.name}}
-                                                                        <ul>
-                                                                            <li>
-                                                                                {{micategorydtl.infor}}
-                                                                            </li>
-                                                                        </ul>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
+                                                    {{micategory.name}}/{{micategory.infor}}
+                                                    <div v-for="micategorydtl in micategory.m_i_category_dtls">
+                                                        <ul>
+                                                            <li>
+                                                                {{micategorydtl.name}}/{{micategorydtl.infor}}
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </li>
                                             </ul>
-
                                         </div>
                                     </li>
                                 </ul>
@@ -69,53 +62,25 @@
                     </div>
                 </div>
             </div>
+            <hr class="d-sm-none">
         </div>
         <div class="col-sm-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card">
+                <div class="card-header">
                     <h2>Function</h2>
                 </div>
-                <div class="panel-body">
-                    <b-form-select v-model="selfunction" :options="ifunction" class="form-control" name="i_function_id" />
+                <div class="card-body">
+                    <b-form-select v-model="selfunction" :options="ifunction" class="form-control"
+                                   name="i_function_id"/>
                     <div v-for="ifitem in ifunctionall">
                         <div v-if="ifitem.id==selfunction">
                             <ul>
                                 <li>
                                     {{ifitem.name}}
                                     <div v-for="ifitemdtl in ifitem.m_i_function_dtls">
-                                    <ul>
-                                        <li>
-                                            {{ifitemdtl.name}}
-                                            <ul><li>{{ifitemdtl.infor}}</li></ul>
-                                        </li>
-                                    </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--詳細:<br><strong>{{selfunction}}</strong>-->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2>Interface</h2>
-                </div>
-                <div class="panel-body">
-                    <b-form-select v-model="selinterface" :options="iinterface" class="form-control" name="i_interface_id"/>
-                    <div v-for="iinteritem in iinterfaceall">
-                        <div v-if="iinteritem.id==selinterface">
-                            <ul>
-                                <li>
-                                    {{iinteritem.name}}
-                                    <div v-for="iinteritemdtl in iinteritem.m_i_interfaces">
                                         <ul>
                                             <li>
-                                                {{iinteritemdtl.name}}
-                                                <ul><li>{{iinteritemdtl.infor}}</li></ul>
+                                                {{ifitemdtl.name}}/{{ifitemdtl.infor}}
                                             </li>
                                         </ul>
                                     </div>
@@ -126,117 +91,188 @@
                     </div>
                 </div>
             </div>
+            <hr class="d-sm-none">
         </div>
 
         <div class="col-sm-4">
-            <h2>typecode</h2>
-            <b-form-input id="typecode"
-                          type="text"
-                          name="typecode"
-                          v-model="typecode"
-                          required
-                          placeholder="typecode">
-            </b-form-input>
-        </div>
-        <div class="col-sm-4">
-            <h2>scale w</h2>
-            <b-form-input id="scale_w"
-                          type="number"
-                          name="scale_w"
-                          step="0.01"
-                          v-model="scalew"
-                          required
-                          placeholder="scale w">
-            </b-form-input>
-        </div>
-        <div class="col-sm-4">
-            <h2>scale d</h2>
-            <b-form-input id="scale_d"
-                          type="number"
-                          name="scale_d"
-                          step="0.01"
-                          v-model="scaled"
-                          required
-                          placeholder="scale d">
-            </b-form-input>
-        </div>
-        <div class="col-sm-4">
-            <h2>scale h</h2>
-            <b-form-input id="scale_h"
-                          type="number"
-                          name="scale_h"
-                          step="0.01"
-                          v-model="scaleh"
-                          required
-                          placeholder="scale h">
-            </b-form-input>
+            <div class="card">
+                <div class="card-header">
+                    <h2>Interface</h2>
+                </div>
+                <div class="card-body">
+                    <b-form-select v-model="selinterface" :options="iinterface" class="form-control"
+                                   name="i_interface_id"/>
+                    <div v-for="iinteritem in iinterfaceall">
+                        <div v-if="iinteritem.id==selinterface">
+                            <ul>
+                                <li>
+                                    {{iinteritem.name}}
+                                    <div v-for="iinteritemdtl in iinteritem.m_i_interfaces">
+                                        <ul>
+                                            <li>
+                                                {{iinteritemdtl.name}}/{{iinteritemdtl.infor}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--詳細:<br><strong>{{selfunction}}</strong>-->
+                    </div>
+                </div>
+            </div>
+            <hr class="d-sm-none">
         </div>
 
         <div class="col-sm-4">
-            <h2>weight</h2>
-            <b-form-input id="weight"
-                          type="number"
-                          name="weight"
-                          step="0.01"
-                          v-model="weight"
-                          required
-                          placeholder="weight">
-            </b-form-input>
+            <div class="card">
+                <div class="card-header">
+                    <h2>typecode</h2>
+                </div>
+                <div class="card-body">
+                    <b-form-input id="typecode"
+                                  type="text"
+                                  name="typecode"
+                                  v-model="typecode"
+                                  required
+                                  placeholder="typecode">
+                    </b-form-input>
+                </div>
+            </div>
+            <hr class="d-sm-none">
         </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    <h2>scale w</h2>
+                </div>
+                <div class="card-body">
+                    <b-form-input id="scale_w"
+                                  type="number"
+                                  name="scale_w"
+                                  step="0.01"
+                                  v-model="scalew"
+                                  required
+                                  placeholder="scale w">
+                    </b-form-input>
+                </div>
+            </div>
+            <hr class="d-sm-none">
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    <h2>scale d</h2>
+                </div>
+                <div class="card-body">
+                    <b-form-input id="scale_d"
+                                  type="number"
+                                  name="scale_d"
+                                  step="0.01"
+                                  v-model="scaled"
+                                  required
+                                  placeholder="scale d">
+                    </b-form-input>
+                </div>
+            </div>
+            <hr class="d-sm-none">
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    <h2>scale h</h2>
+                </div>
+                <div class="card-body">
+                    <b-form-input id="scale_h"
+                                  type="number"
+                                  name="scale_h"
+                                  step="0.01"
+                                  v-model="scaleh"
+                                  required
+                                  placeholder="scale h">
+                    </b-form-input>
+                </div>
+            </div>
+            <hr class="d-sm-none">
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    <h2>weight</h2>
+                </div>
+                <div class="card-body">
+                    <b-form-input id="weight"
+                                  type="number"
+                                  name="weight"
+                                  step="0.01"
+                                  v-model="weight"
+                                  required
+                                  placeholder="weight">
+                    </b-form-input>
+                </div>
+            </div>
+        </div>
+        <hr class="d-sm-none">
 
     </div>
-
+    <!--</div>-->
 </template>
 
 <script>
     export default {
         name: "bvselect",
-        props:{
-            makers:{
+        props: {
+            makers: {
                 type: Object,
-                required:true,
+                required: true,
             },
-            makerinfor:{
+            makerinfor: {
                 type: Object,
-                required:true,
+                required: true,
             },
-            icategory:{
+            icategory: {
                 type: Object,
-                required:true,
+                required: true,
             },
-            icategoryall:{
+            icategoryall: {
                 type: Array,
-                required:true,
+                required: true,
 
             },
-            ifunction:{
+            ifunction: {
                 type: Object,
-                required:true,
+                required: true,
             },
-            ifunctionall:{
+            ifunctionall: {
                 type: Array,
-                required:true,
+                required: true,
             },
-            iinterface:{
+            iinterface: {
                 type: Object,
-                required:true,
+                required: true,
             },
-            iinterfaceall:{
+            iinterfaceall: {
                 type: Array,
-                required:true,
+                required: true,
+            },
+            mitem: {
+                type: Object,
+                required: true,
             },
         },
-        data(){
-            return{
-                selected:null,
-                selcategory:null,
-                selfunction:null,
-                selinterface:null,
-                typecode:'',
-                scalew:null,
-                scaled:null,
-                scaleh:null,
-                weight:null,
+        data() {
+            return {
+                selected: this.mitem.m_maker_id,
+                selcategory: this.mitem.i_category_id,
+                selfunction: this.mitem.i_function_id,
+                selinterface: this.mitem.i_interface_id,
+                typecode: this.mitem.typecode,
+                scalew: this.mitem.scale_w,
+                scaled: this.mitem.scale_d,
+                scaleh: this.mitem.scale_h,
+                weight: this.mitem.weight,
                 // options:makers,
                 // options:[
                 //     { value: null, text: 'Please select an option' },

@@ -21,6 +21,7 @@ Route::get('/welcome', function () {
 //    return view('top');
 });
 
+
 Route::resource('makers', 'masters\MakerController');
 Route::resource('micategories', 'masters\MicategoryController');
 Route::resource('micategorydtls', 'masters\MicategorydtlController');
@@ -34,7 +35,24 @@ Route::resource('iinterface', 'masters\IinterfaceController');
 Route::resource('miinterface', 'masters\MiinterfaceController');
 Route::resource('reliinterfacemiinterface', 'masters\ReliinterfacemiinterfaceController');
 Route::resource('mitems', 'masters\MitemController');
+Route::resource('msupplies', 'masters\MsupplyController');
+Route::resource('isupplies', 'masters\IsupplyController');
+Route::resource('relisupplymsupply', 'masters\RelisupplymsupplyController');
+Route::resource('miqualitycategories', 'masters\MiqualitycategoryController');
+Route::resource('iqualitylvls', 'masters\IqualitylvlController');
+Route::resource('reliqualitylvlmiqltycategories', 'masters\ReliqualitylvlmiqltycategoryController');
+Route::resource('mshops', 'masters\MshopController');
+Route::resource('items', 'masters\ItemController');
+Route::resource('shelves', 'masters\ShelfController');
+Route::resource('locations', 'masters\LocationController');
+Route::resource('rellocationshelves', 'masters\RellocationshelfController');
 
 
+Route::get('stocks/{id}/add', 'masters\StockController@add');
+Route::get('stocks/{id}/{itemid}/editor', 'masters\StockController@editor');
+Route::get('stocks/{id}/new', 'masters\StockController@new');
+
+
+Route::resource('stocks', 'masters\StockController');
 
 //Route::get('makers/create', 'masters\MakersController@create');

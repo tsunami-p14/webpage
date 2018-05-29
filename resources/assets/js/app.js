@@ -25,8 +25,6 @@ Vue.use(BootstrapVue);
 
 import vSelect from 'vue-select';
 
-
-
 // window.Balert = require('bootstrap-vue/es/components/alert/alert');
 // Vue.use(Balert);
 
@@ -42,7 +40,12 @@ Vue.component('example-nav', require('./components/VueNavbar.vue'));
 Vue.component('v-select', vSelect);
 Vue.component('example-select', require('./components/VueSelectText.vue'));
 Vue.component('example-bvselcet', require('./components/BvSelect.vue'));
-
+Vue.component('mitem-select',require('./components/mitemSelect.vue'));
+Vue.component('item-select',require('./components/itemSelect.vue'));
+Vue.component('supply-select',require('./components/supplySelect.vue'));
+Vue.component('shop-select',require('./components/shopSelect.vue'));
+Vue.component('quality-select',require('./components/qualitySelect.vue'));
+Vue.component('shelf-select',require('./components/shelfSelect.vue'));
 
 // Vue.component('bAlert', bAlert);
 
@@ -58,6 +61,9 @@ Vue.component('button-counter', {
     },
     template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
 });
+
+
+const eventHub = global.eventHub = new Vue();
 
 const app = new Vue({
     el: '#app'

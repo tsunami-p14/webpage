@@ -13,6 +13,7 @@
                     {{--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />--}}
                     {{--<link type="text/css" rel="stylesheet"--}}
                           {{--href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />--}}
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 
                     <meta name="csrf-token" content="{{ csrf_token() }}">
                     <title>{{ config('app.name', 'Laravel') }}</title>
@@ -33,7 +34,7 @@
                     <div id="app">
                         {{--@include('navbar')--}}
                         @include('vuenavbar')
-                        <div class="container">
+                        <div class="container" style="max-width: 100%">
                             @if(Session::has('flash_message'))
                                 <div class="alert alert-success">{{ Session::get('flash_message') }} </div>
                             @endif

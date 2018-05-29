@@ -47,8 +47,9 @@ class MitemController extends Controller
         $iinterface = I_interface::pluck('name','id');
         $iinterfaceall=I_interface::with('m_i_interfaces')->get();
 
+        $mitem= M_item::all();
 
-        return view('masters.mitemcreate',compact('makers','makerinfor', 'icategory', 'icategoryall','ifunction','ifunctionall','iinterface','iinterfaceall'));
+        return view('masters.mitemcreate',compact('makers','makerinfor', 'icategory', 'icategoryall','ifunction','ifunctionall','iinterface','iinterfaceall','mitem'));
     }
 
     /**
@@ -77,6 +78,17 @@ class MitemController extends Controller
     public function show($id)
     {
         //
+//        $data = M_item::findOrFail($id);
+
+        $data = M_item::with('m_makers')
+            ->with('i_categories.m_i_categories.m_i_category_dtls')
+            ->with('i_functions.m_i_function_dtls')
+            ->with('i_interfaces.m_i_interfaces')
+            ->findOrFail($id);
+//        $icategoryall= I_category::with('m_i_categories.m_i_category_dtls')->get();
+//        dd($data);
+        return view('masters.mitemshow',compact('data'));
+
     }
 
     /**
@@ -88,6 +100,26 @@ class MitemController extends Controller
     public function edit($id)
     {
         //
+        $makers= M_maker::pluck('name','id');
+        $makerinfor= M_maker::pluck('infor','id');
+        $icategory= I_category::pluck('name','id');
+//        relationのrelationまで取ってくる START
+        $icategoryall= I_category::with('m_i_categories.m_i_category_dtls')->get();
+//        relationのrelationまで取ってくる END
+        $ifunction = I_function::pluck('name','id');
+        $ifunctionall= I_function::with('m_i_function_dtls')->get();
+
+        $iinterface = I_interface::pluck('name','id');
+        $iinterfaceall=I_interface::with('m_i_interfaces')->get();
+
+
+        $mitem = M_item::with('m_makers')
+            ->with('i_categories.m_i_categories.m_i_category_dtls')
+            ->with('i_functions.m_i_function_dtls')
+            ->with('i_interfaces.m_i_interfaces')
+            ->findOrFail($id);
+
+        return view('masters.mitemedit',compact('mitem','makers','makerinfor', 'icategory', 'icategoryall','ifunction','ifunctionall','iinterface','iinterfaceall'));
     }
 
     /**
@@ -97,9 +129,15 @@ class MitemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MitemRequest $request, $id)
     {
         //
+        $data= M_item::findOrFail($id);
+        $data->update($request->all());
+//        $data->m_i_function_dtls()->sync($request->input('mi_functiondtl',[]));
+
+        \Session::flash('flash_message','M ITEM を更新しました');
+        return view('masters.mitemshow',compact('data'));
     }
 
     /**
@@ -111,5 +149,10 @@ class MitemController extends Controller
     public function destroy($id)
     {
         //
+        $data = M_item::findOrFail($id);
+        $data->delete();
+        \Session::flash('flash_message','ITEM Master 情報を削除しました');
+        return redirect('mitems');
+
     }
 }
