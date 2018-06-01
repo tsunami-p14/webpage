@@ -16,7 +16,7 @@
 
             {{--{!! Form::close() !!}--}}
 
-            <mitem-select :mitems="{{$mitems->pluck('typecode','id')}}" :mitemsall="{{$mitems}}"></mitem-select>
+            <mitem-select :mitems="{{$mitems->pluck('typecode','id')}}" :mitemsall="{{$mitems}}" :mitemid="{{$mitemid}}"></mitem-select>
 
             {{--@foreach($mitems as $mitem)--}}
                 {{--<article>--}}

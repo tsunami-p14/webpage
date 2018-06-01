@@ -34,7 +34,6 @@ class ItemController extends Controller
             ->with('m_items.i_interfaces.m_i_interfaces')
             ->with('stocks')
             ->get();
-
         //表示系に必要なデータ一群
 
         //Mitemの全データ
@@ -57,6 +56,7 @@ class ItemController extends Controller
             ->with('icategoryall',$icategoryall)
             ->with('ifunctionall',$ifunctionall)
             ->with('iinterfaceall',$iinterfaceall)
+            ->with('mitemid',0)
             ;
 
     }
@@ -139,6 +139,41 @@ class ItemController extends Controller
     public function show($id)
     {
         //
+//        $items = Item::all();
+        //Itemからみた全てのデータ取得
+        $items = Item::with('m_shops')
+            ->with('m_items')
+            ->with('i_supplies.m_supplies')
+            ->with('m_i_qlty_categories.i_quality_lvls')
+            ->with('m_items.i_categories.m_i_categories.m_i_category_dtls')
+            ->with('m_items.i_functions.m_i_function_dtls')
+            ->with('m_items.i_interfaces.m_i_interfaces')
+            ->with('stocks')
+            ->get();
+        //表示系に必要なデータ一群
+
+        //Mitemの全データ
+        $mitems = M_item::
+        with('m_makers')
+            ->with('i_categories.m_i_categories.m_i_category_dtls')
+            ->with('i_functions.m_i_function_dtls')
+            ->with('i_interfaces.m_i_interfaces')
+            ->get();
+
+        $makerinfor= M_maker::all();
+        $icategoryall= I_category::with('m_i_categories.m_i_category_dtls')->get();
+        $ifunctionall= I_function::with('m_i_function_dtls')->get();
+        $iinterfaceall=I_interface::with('m_i_interfaces')->get();
+
+        return view('masters.items')
+            ->with('items',$items)
+            ->with('mitems',$mitems)
+            ->with('makerinfor',$makerinfor)
+            ->with('icategoryall',$icategoryall)
+            ->with('ifunctionall',$ifunctionall)
+            ->with('iinterfaceall',$iinterfaceall)
+            ->with('mitemid',$id)
+            ;
     }
 
     /**
@@ -208,8 +243,9 @@ class ItemController extends Controller
         $item->i_quality_lvls()->sync($request->input('i_quality_lvl_id'));
         $item->m_i_qlty_categories()->sync($request->input('m_i_qlty_category_id'));
 
-        \Session::flash('flash_message','Item 情報を追加しました');
-        return redirect('items');
+        \Session::flash('flash_message','Item 情報を編集しました');
+//        return redirect()->action('masters\ItemController@show',['id'=>$request->input('m_item_id')]);
+        return back();
     }
 
     /**

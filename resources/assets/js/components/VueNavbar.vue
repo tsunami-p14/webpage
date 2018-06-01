@@ -37,8 +37,12 @@
                     <b-dropdown-item href="/relisupplymsupply">Supply</b-dropdown-item>
                     <b-dropdown-item href="/reliqualitylvlmiqltycategories">Quality GROUP</b-dropdown-item>
                     <b-dropdown-item href="/rellocationshelves">Shelf-Location</b-dropdown-item>
-
                 </b-nav-item-dropdown>
+
+                <b-nav-item-dropdown text="Items">
+                    <b-dropdown-item href="/items">Items</b-dropdown-item>
+                </b-nav-item-dropdown>
+
 
             </b-navbar-nav>
 

@@ -1,85 +1,87 @@
     <div class="col-sm-12 col-md-4">
         {{--Item Master START--}}
-        <div class="card">
+            <div class="card">
             <div class="card-header">
                 <span class="h4">Item Master</span>
             </div>
             <div class="card-body">
-                <div>
-                    <table class="table">
-                        <tr>
-                            <td style="text-align: left">typecoed</td>
-                            <td><span class="h5">{{$mitem->typecode}}</span></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: left">scalse W</td>
-                            <td><span class="h5">{{$mitem->scale_w}}</span></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: left">scalse D</td>
-                            <td><span class="h5">{{$mitem->scale_d}}</span></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: left">scalse H</td>
-                            <td><span class="h5">{{$mitem->scale_h}}</span></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: left">Weight</td>
-                            <td><span class="h5">{{$mitem->weight}}</span></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: left">Maker</td>
-                            <td><span class="h5">{{$mitem->m_makers->name}}</span> <small class="text-muted">{{$mitem->m_makers->infor}}</small></td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: left">Category</td>
-                            <td>
-                                {{$mitem->i_categories->name}}<br>
-                                <ul>
-                                    @foreach($mitem->i_categories->m_i_categories as $mic )
-                                        <li><span class="h5">{{$mic->name}}</span> <small class="text-muted">{{$mic->infor}}</small>
-                                            @foreach($mic->m_i_category_dtls as $micd)
-                                                <ul>
-                                                    <li><span class="h5">{{$micd->name}}</span> <small class="text-muted">{{$micd->infor}}</small></li>
-                                                </ul>
-                                            @endforeach
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: left">Function</td>
-                            <td>
-                                <span class="h5">{{$mitem->i_functions->name}}</span>
-                                <ul>
-                                    @foreach($mitem->i_functions->m_i_function_dtls as $mifd)
-                                        <li>
-                                            <span class="h5">{{$mifd->name}}</span> <small class="text-muted">{{$mifd->infor}}</small>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: left">Interface</td>
-                            <td>
-                                <span class="h5">{{$mitem->i_interfaces->name}}</span>
-                                <ul>
-                                    @foreach($mitem->i_interfaces->m_i_interfaces as $miif)
-                                        <li>
-                                            <span class="h5">{{$miif->name}}</span> <small class="text-muted">{{$miif->infor}}</small>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </td>
-                        </tr>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead></thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align: left">typecoed</td>
+                                <td><span class="h5">{{$mitem->typecode}}</span></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left">scalse W</td>
+                                <td><span class="h5">{{$mitem->scale_w}}</span></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left">scalse D</td>
+                                <td><span class="h5">{{$mitem->scale_d}}</span></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left">scalse H</td>
+                                <td><span class="h5">{{$mitem->scale_h}}</span></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left">Weight</td>
+                                <td><span class="h5">{{$mitem->weight}}</span></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left">Maker</td>
+                                <td><span class="h5">{{$mitem->m_makers->name}}</span> <small class="text-muted">{{$mitem->m_makers->infor}}</small></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left">Category</td>
+                                <td>
+                                    {{$mitem->i_categories->name}}<br>
+                                    <ul>
+                                        @foreach($mitem->i_categories->m_i_categories as $mic )
+                                            <li><span class="h5">{{$mic->name}}</span> <small class="text-muted">{{$mic->infor}}</small>
+                                                @foreach($mic->m_i_category_dtls as $micd)
+                                                    <ul>
+                                                        <li><span class="h5">{{$micd->name}}</span> <small class="text-muted">{{$micd->infor}}</small></li>
+                                                    </ul>
+                                                @endforeach
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left">Function</td>
+                                <td>
+                                    <span class="h5">{{$mitem->i_functions->name}}</span>
+                                    <ul>
+                                        @foreach($mitem->i_functions->m_i_function_dtls as $mifd)
+                                            <li>
+                                                <span class="h5">{{$mifd->name}}</span> <small class="text-muted">{{$mifd->infor}}</small>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left">Interface</td>
+                                <td>
+                                    <span class="h5">{{$mitem->i_interfaces->name}}</span>
+                                    <ul>
+                                        @foreach($mitem->i_interfaces->m_i_interfaces as $miif)
+                                            <li>
+                                                <span class="h5">{{$miif->name}}</span> <small class="text-muted">{{$miif->infor}}</small>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
         </div>
         {{--Item Master end--}}
-
 
     </div>
 

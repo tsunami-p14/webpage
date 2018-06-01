@@ -22,9 +22,19 @@ class StockRequest extends FormRequest
      */
     public function rules()
     {
+
+        if($this->id){
+            $unique='unique:stocks,serial,'.$this->id.',id' ;
+        }else{
+            $unique='unique:stocks,serial';
+        }
+
+//        $unique='unique:stocks,serial';
+
+
         return [
             //
-            'serial'=>'required|unique:stocks,serial',
+            'serial'=>'required|'.$unique ,
 //            'selflg'=>'required',
             'shelf_id'=>'required',
             'location_id'=>'required',

@@ -43,7 +43,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr v-for="itemd in getitems.data.data">
+                <tr v-for="itemd in getitems.data.data" >
                     <td>{{itemd.name}}</td>
                     <td>{{itemd.infor}}</td>
                     <td>
@@ -73,8 +73,8 @@
                         </ul>
                     </td>
                     <td>
-                        <!--todo itemdを渡したいんだけど渡せない-->
-                        {{itemd.id}}
+                        <span>{{stckCount(itemd.stocks)}}</span>
+                        <!--<span v-for="stkitem in itemd.stocks">{{stckCount(stkitem)}}</span>-->
                     </td>
                     <td>
                         <a v-bind:href="'/items/'+itemd.id+'/edit'" title="Edit" class="btn btn-primary btn-sm">編集{{itemd.id}}</a>
@@ -132,6 +132,7 @@
         // },
         created: function () {
             eventHub.$on('setitem', this.setitem);
+
         },
         methods: {
             load(page) {
@@ -197,16 +198,31 @@
 
             },
 
-            async stockconut(id){
-                await axios
+            stckCount(stkitem)
+            {
+                var ret = 0;
+                stkitem.forEach(function (value) {
+                    if(value.selflg==0)
+                       ret++;
+                });
+                return ret;
+            },
+
+
+             async  stockconut(id){
+                 var temp = new Object();
+                 await  axios
                     .get('/api/stockCounter/' + id)
                     .then(response => {
-                        this.getstock = response;
+                        this.getstock= response;
                     })
                     .catch(error => console.log(error));
-                this.stocknum = this.getstock.data;
 
-                console.log("kitttaaaaaaaaaaaaaaaaaaaaaaaaa"+id);
+
+
+                 console.log("--Objective_"+this.getstock.data);
+                  return this.getstock;
+
             },
 
 

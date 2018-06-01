@@ -94,16 +94,10 @@
                 eventHub.$emit('setitem',{
                     'selectedid':this.selmitems
                 });
-                // console.log(this.selmitems);
-                // console.log("dispatch--");
             }
-            // selectedMitem(){
-            //     // eventHub.$emit('selectedMitem',{
-            //     //     'selectedid':this.mitem.id
-            //     // });
-            // console.log("ok");
-            //
-            // },
+
+        },
+        computed:{
 
         },
 

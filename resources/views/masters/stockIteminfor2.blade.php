@@ -71,9 +71,11 @@
             <span class="h4">Stocks</span> <a href="/stocks/{{$item->id}}/new" title="New" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i></a>
 
         </div>
+        {{--{!! Form::model($stock,['method' => 'DELETE','url' => ['stocks',$stock->id ] ]) !!}--}}
+
         <div class="card-body">
-            <div>
-                <table class="table">
+            <div class="table-responsive">
+                <table class="table table-striped">
                     <thead class="text-center">
                     <tr>
                         <th>Serial</th>

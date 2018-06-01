@@ -46,6 +46,7 @@ class ApiController extends Controller
             ->with('i_supplies.m_supplies')
             ->with('i_quality_lvls')
             ->with('m_i_qlty_categories')
+            ->with('stocks')
             ->paginate(3)//            ->get()
         ;
 
@@ -229,7 +230,10 @@ class ApiController extends Controller
             $q->where('items.id', $id);
         })->where('selflg','0')->get();
 
-        return $ret->count();
+//        dd($ret);
+        $item = $ret->count();
+
+        return $item;
 
     }
 

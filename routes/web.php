@@ -22,6 +22,7 @@ Route::get('/welcome', function () {
 });
 
 
+
 Route::resource('makers', 'masters\MakerController');
 Route::resource('micategories', 'masters\MicategoryController');
 Route::resource('micategorydtls', 'masters\MicategorydtlController');
