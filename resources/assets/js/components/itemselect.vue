@@ -77,10 +77,14 @@
                         <!--<span v-for="stkitem in itemd.stocks">{{stckCount(stkitem)}}</span>-->
                     </td>
                     <td>
-                        <a v-bind:href="'/items/'+itemd.id+'/edit'" title="Edit" class="btn btn-primary btn-sm">編集{{itemd.id}}</a>
-                        <button v-on:click="deleteItem(itemd.id)" class="btn btn-danger  btn-sm"" >削除</button>
-                        <a v-bind:href="'/stocks/'+itemd.id+'/add'" title="Edit" class="btn btn-primary btn-sm">在庫追加{{itemd.id}}</a>
-                        <!--<a href="/items/create" title="Stock" class="btn btn-primary btn-sm">追加</a>-->
+                        <div class="btn-toolbar">
+                            <div class="btn-group">
+                                <a v-bind:href="'/items/'+itemd.id+'/edit'" title="Edit" class="btn btn-primary btn-sm">編集{{itemd.id}}</a>
+                                <button v-on:click="deleteItem(itemd.id)" class="btn btn-danger  btn-sm"" >削除</button>
+                                <a v-bind:href="'/stocks/'+itemd.id+'/add'" title="Edit" class="btn btn-primary btn-sm">在庫追加{{itemd.id}}</a>
+                                <!--<a href="/items/create" title="Stock" class="btn btn-primary btn-sm">追加</a>-->
+                            </div>
+                        </div>
                     </td>
                     <!--<td>{{item.i_supplies[0].name}}</td>-->
                     <!--<td>{{item.m_shops[0].name}}</td>-->

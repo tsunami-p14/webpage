@@ -89,32 +89,63 @@
                     </thead>
                     <tbody>
 
-                    @foreach($item->stocks as $stock)
+                    @foreach($stockers as $sto)
                         <tr class="text-center">
-                            <td class="text-left">{{$stock->serial}}</td>
-                            <td>{{$stock->selflg}}</td>
+                            <td class="text-left">{{$sto->serial}}</td>
+                            <td>{{$sto->selflg}}</td>
                             <td>
-                                @foreach($stock->shelves as $shelf)
+                                @foreach($sto->shelves as $shelf)
                                     {{$shelf->name}}
                                 @endforeach
                             </td>
                             <td>
-                                @foreach($stock->locations as $locate)
+                                @foreach($sto->locations as $locate)
                                     {{$locate->name}}
                                 @endforeach
                             </td>
 
-                            <td>{{$stock->created_at}}</td>
-                            <td>{{$stock->updated_at}}</td>
+                            <td>{{$sto->created_at}}</td>
+                            <td>{{$sto->updated_at}}</td>
                             <td>
-                                {!! link_to(action('masters\StockController@editor',[$stock->id,$item->id]),'編集',['class'=>'btn btn-primary']) !!}
-                                {{--{!! link_to_action('masters\StockController@editor','test',[$stock->id,$item->id]) !!}--}}
-                                {!! delete_form(['stocks',$stock->id]) !!}
+                                <div class="btn-toolbar">
+                                    <div class="btn-group">
+                                        {!! link_to(action('masters\StockController@editor',[$sto->id,$item->id]),'編集',['class'=>'btn btn-primary']) !!}
+                                        {!! delete_form(['stocks',$sto->id]) !!}
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     @endforeach
+
+
+
+                    {{--@foreach($item->stocks as $stock)--}}
+                        {{--<tr class="text-center">--}}
+                            {{--<td class="text-left">{{$stock->serial}}</td>--}}
+                            {{--<td>{{$stock->selflg}}</td>--}}
+                            {{--<td>--}}
+                                {{--@foreach($stock->shelves as $shelf)--}}
+                                    {{--{{$shelf->name}}--}}
+                                {{--@endforeach--}}
+                            {{--</td>--}}
+                            {{--<td>--}}
+                                {{--@foreach($stock->locations as $locate)--}}
+                                    {{--{{$locate->name}}--}}
+                                {{--@endforeach--}}
+                            {{--</td>--}}
+
+                            {{--<td>{{$stock->created_at}}</td>--}}
+                            {{--<td>{{$stock->updated_at}}</td>--}}
+                            {{--<td>--}}
+                                {{--{!! link_to(action('masters\StockController@editor',[$stock->id,$item->id]),'編集',['class'=>'btn btn-primary']) !!}--}}
+                                {{--{!! link_to_action('masters\StockController@editor','test',[$stock->id,$item->id]) !!}--}}
+                                {{--{!! delete_form(['stocks',$stock->id]) !!}--}}
+                            {{--</td>--}}
+                        {{--</tr>--}}
+                    {{--@endforeach--}}
                     </tbody>
                 </table>
+                {{$stockers->links()}}
             </div>
         </div>
     </div>

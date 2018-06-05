@@ -147,6 +147,13 @@ class StockController extends Controller
             ->with('stocks')
             ->get()->find($id);
 
+        $stockers  = Stock::whereHas(
+            'items',function($q) use ($item){
+                $q->where('items.id','=',$item->id);
+            }
+        )->with('items')->paginate(10);
+
+
         $mitemobj = $item->m_items->first();
 
         if($mitemobj===null){
@@ -181,6 +188,7 @@ class StockController extends Controller
             ->with('ifunctionall',$ifunctionall)
             ->with('iinterfaceall',$iinterfaceall)
             ->with('isupplyall',$isupplyall)
+            ->with('stockers',$stockers)
             ;
 
 
@@ -228,7 +236,11 @@ class StockController extends Controller
         $stockshelf_id = Stock::with('Shelves')->get()->find($id)->shelves()->first()->id;
         $stocklocation_id = Stock::with('Locations')->get()->find($id)->locations()->first()->id;
 
-
+        $stockers  = Stock::whereHas(
+            'items',function($q) use ($item){
+            $q->where('items.id','=',$item->id);
+        }
+        )->with('items')->paginate(10);
 
         $mitem = M_item::with('m_makers')
             ->with('i_categories.m_i_categories.m_i_category_dtls')
@@ -257,6 +269,7 @@ class StockController extends Controller
             ->with('stock',$stock)
             ->with('stockshelf_id',$stockshelf_id)
             ->with('stocklocation_id',$stocklocation_id)
+            ->with('stockers',$stockers )
             ;
 
 
@@ -332,6 +345,13 @@ class StockController extends Controller
             ->with('i_interfaces.m_i_interfaces')->get()->find($mitemid)
         ;
 
+        $stockers  = Stock::whereHas(
+            'items',function($q) use ($item){
+            $q->where('items.id','=',$item->id);
+        }
+        )->with('items')->paginate(10);
+
+
 //        dd($item);
 
 
@@ -352,6 +372,7 @@ class StockController extends Controller
             ->with('ifunctionall',$ifunctionall)
             ->with('iinterfaceall',$iinterfaceall)
             ->with('isupplyall',$isupplyall)
+            ->with('stockers',$stockers)
             ;
 
     }
