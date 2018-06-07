@@ -47,7 +47,7 @@ class ApiController extends Controller
             ->with('i_quality_lvls')
             ->with('m_i_qlty_categories')
             ->with('stocks')
-            ->paginate(3)//            ->get()
+            ->paginate(20)//            ->get()
         ;
 
 
