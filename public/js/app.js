@@ -2106,6 +2106,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: "VueNavbar"
@@ -22078,7 +22082,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -55865,45 +55869,45 @@ var render = function() {
                       _c(
                         "b-dropdown-item",
                         { attrs: { href: "/micrelmicdtl" } },
-                        [_vm._v("micrelmicdtl")]
+                        [_vm._v("カテゴリマスタとその詳細")]
                       ),
                       _vm._v(" "),
                       _c("b-dropdown-item", { attrs: { href: "/icrelmic" } }, [
-                        _vm._v("icrelmic")
+                        _vm._v("アイテムカテゴリとそのマスタ")
                       ]),
                       _vm._v(" "),
                       _c(
                         "b-dropdown-item",
                         { attrs: { href: "/ifunrelmifunc" } },
-                        [_vm._v("ifunrelmifunc")]
+                        [_vm._v("ファンクションとその詳細")]
                       ),
                       _vm._v(" "),
                       _c(
                         "b-dropdown-item",
                         { attrs: { href: "/reliinterfacemiinterface" } },
-                        [_vm._v("Interface")]
+                        [_vm._v("インタフェイスとそのマスタ")]
                       ),
                       _vm._v(" "),
                       _c("b-dropdown-item", { attrs: { href: "/mitems" } }, [
-                        _vm._v("M Items")
+                        _vm._v("アイテムマスタ")
                       ]),
                       _vm._v(" "),
                       _c(
                         "b-dropdown-item",
                         { attrs: { href: "/relisupplymsupply" } },
-                        [_vm._v("Supply")]
+                        [_vm._v("サプライ群")]
                       ),
                       _vm._v(" "),
                       _c(
                         "b-dropdown-item",
                         { attrs: { href: "/reliqualitylvlmiqltycategories" } },
-                        [_vm._v("Quality GROUP")]
+                        [_vm._v("クオリティ群")]
                       ),
                       _vm._v(" "),
                       _c(
                         "b-dropdown-item",
                         { attrs: { href: "/rellocationshelves" } },
-                        [_vm._v("Shelf-Location")]
+                        [_vm._v("棚と位置")]
                       )
                     ],
                     1
@@ -55916,6 +55920,19 @@ var render = function() {
                       _c("b-dropdown-item", { attrs: { href: "/items" } }, [
                         _vm._v("Items")
                       ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "b-nav-item-dropdown",
+                    { attrs: { text: "Lists" } },
+                    [
+                      _c(
+                        "b-dropdown-item",
+                        { attrs: { href: "/stocklists" } },
+                        [_vm._v("Stock Lists")]
+                      )
                     ],
                     1
                   )
@@ -55941,13 +55958,15 @@ var render = function() {
                 [
                   _c(
                     "b-nav-form",
+                    { attrs: { method: "get", action: "/stocklists" } },
                     [
                       _c("b-form-input", {
                         staticClass: "mr-sm-2",
                         attrs: {
                           size: "sm",
                           type: "text",
-                          placeholder: "Search"
+                          placeholder: "Search",
+                          name: "keywords"
                         }
                       }),
                       _vm._v(" "),
@@ -55957,7 +55976,7 @@ var render = function() {
                           staticClass: "my-2 my-sm-0",
                           attrs: { size: "sm", type: "submit" }
                         },
-                        [_vm._v("Search")]
+                        [_vm._v("Search!")]
                       )
                     ],
                     1

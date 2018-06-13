@@ -21,8 +21,6 @@ Route::get('/welcome', function () {
 //    return view('top');
 });
 
-
-
 Route::resource('makers', 'masters\MakerController');
 Route::resource('micategories', 'masters\MicategoryController');
 Route::resource('micategorydtls', 'masters\MicategorydtlController');
@@ -48,6 +46,13 @@ Route::resource('shelves', 'masters\ShelfController');
 Route::resource('locations', 'masters\LocationController');
 Route::resource('rellocationshelves', 'masters\RellocationshelfController');
 
+//Route::post('stocklists', 'masters\StocklistController@index');
+Route::resource('stocklists', 'masters\StocklistController');
+
+
+
+Route::post('stocks/{id}/search', 'masters\StockController@search');
+Route::get('stocks/{id}/search', 'masters\StockController@search');
 
 Route::get('stocks/{id}/add', 'masters\StockController@add');
 Route::get('stocks/{id}/{itemid}/editor', 'masters\StockController@editor');

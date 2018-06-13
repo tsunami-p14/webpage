@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <h1>MasterItem DTL 関連付けるよ</h1>
+    <h1>Category MASTER Detail relation</h1>
     <hr>
     {{--{!! link_to('micrelmicdtl/create', '新規作成', ['class' => 'btn btn-primary']) !!}--}}
     @foreach($datas as $data)

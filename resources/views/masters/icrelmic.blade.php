@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Item Category Masters 関連付けるよ</h1>
+    <h1>Item Category Masters Relation </h1>
     <hr>
 
     {{--Vueのサンプル。--}}

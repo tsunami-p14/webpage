@@ -68,10 +68,17 @@
     {{--Stocked START--}}
     <div class="card">
         <div class="card-header">
-            <span class="h4">Stocks</span> <a href="/stocks/{{$item->id}}/new" title="New" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i></a>
-
+            {{--<span class="h4">Stocks</span> <a href="/stocks/{{$item->id}}/new" title="New" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i></a>--}}
+            <form class="form-inline" action="/stocks/{{$item->id}}/search" method="post">
+                <label for="keywords" class="control-label"><span class="h4">Stocks</span><a href="/stocks/{{$item->id}}/new" title="New" class="btn btn-primary btn-sm"><i class="fa fa-plus-circle"></i></a></label>
+                {{ csrf_field() }}
+                <input type="text" name="keywords" class="form-control">
+                <input type="submit" value="検索" class="btn btn-info form-control">
+            </form>
         </div>
         {{--{!! Form::model($stock,['method' => 'DELETE','url' => ['stocks',$stock->id ] ]) !!}--}}
+
+        {!! Form::model(null,['method' => 'post','url' => ['stocks'] ]) !!}
 
         <div class="card-body">
             <div class="table-responsive">
@@ -145,10 +152,15 @@
                     {{--@endforeach--}}
                     </tbody>
                 </table>
-                {{$stockers->links()}}
+                {{$stockers->appends(Request::only('keywords'))->links()}}
             </div>
         </div>
+        {{Form::hidden('m_item_id', $mitem->id)}}
+
+        {!! Form::close() !!}
+
     </div>
+
     {{--Stocked end--}}
 
 </div>

@@ -29,18 +29,22 @@
                 </b-nav-item-dropdown>
 
                 <b-nav-item-dropdown text="Relation">
-                    <b-dropdown-item href="/micrelmicdtl">micrelmicdtl</b-dropdown-item>
-                    <b-dropdown-item href="/icrelmic">icrelmic</b-dropdown-item>
-                    <b-dropdown-item href="/ifunrelmifunc">ifunrelmifunc</b-dropdown-item>
-                    <b-dropdown-item href="/reliinterfacemiinterface">Interface</b-dropdown-item>
-                    <b-dropdown-item href="/mitems">M Items</b-dropdown-item>
-                    <b-dropdown-item href="/relisupplymsupply">Supply</b-dropdown-item>
-                    <b-dropdown-item href="/reliqualitylvlmiqltycategories">Quality GROUP</b-dropdown-item>
-                    <b-dropdown-item href="/rellocationshelves">Shelf-Location</b-dropdown-item>
+                    <b-dropdown-item href="/micrelmicdtl">カテゴリマスタとその詳細</b-dropdown-item>
+                    <b-dropdown-item href="/icrelmic">アイテムカテゴリとそのマスタ</b-dropdown-item>
+                    <b-dropdown-item href="/ifunrelmifunc">ファンクションとその詳細</b-dropdown-item>
+                    <b-dropdown-item href="/reliinterfacemiinterface">インタフェイスとそのマスタ</b-dropdown-item>
+                    <b-dropdown-item href="/mitems">アイテムマスタ</b-dropdown-item>
+                    <b-dropdown-item href="/relisupplymsupply">サプライ群</b-dropdown-item>
+                    <b-dropdown-item href="/reliqualitylvlmiqltycategories">クオリティ群</b-dropdown-item>
+                    <b-dropdown-item href="/rellocationshelves">棚と位置</b-dropdown-item>
                 </b-nav-item-dropdown>
 
                 <b-nav-item-dropdown text="Items">
                     <b-dropdown-item href="/items">Items</b-dropdown-item>
+                </b-nav-item-dropdown>
+
+                <b-nav-item-dropdown text="Lists">
+                    <b-dropdown-item href="/stocklists">Stock Lists</b-dropdown-item>
                 </b-nav-item-dropdown>
 
 
@@ -55,9 +59,9 @@
             <!-- Right aligned nav items -->
             <b-navbar-nav class="ml-auto">
 
-                <b-nav-form>
-                    <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search"/>
-                    <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+                <b-nav-form method="get" action="/stocklists" >
+                    <b-form-input size="sm" class="mr-sm-2" type="text" placeholder="Search" name="keywords" />
+                    <b-button size="sm" class="my-2 my-sm-0" type="submit">Search!</b-button>
                 </b-nav-form>
 
                 <b-nav-item-dropdown text="Lang" right>

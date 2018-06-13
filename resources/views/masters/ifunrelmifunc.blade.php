@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>ifunc Mifncdtl 関連付けるよ</h1>
+    <h1>Function Detail relation</h1>
     <hr>
 
     @foreach($datas as $data)

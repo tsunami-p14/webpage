@@ -307,6 +307,7 @@ class StockController extends Controller
     {
         //
         $stock= Stock::findOrFail($id);
+        $stock->delete();
         $stock->shelves()->detach();
         $stock->locations()->detach();
         $stock->items()->detach();
@@ -314,6 +315,68 @@ class StockController extends Controller
 
         return back();
     }
+
+
+    public function search(Request $request,$id)
+    {
+
+ $request->input('keywords');
+
+
+        $item = Item::with('m_items')
+            ->with('i_supplies.m_supplies')
+            ->with('m_i_qlty_categories.i_quality_lvls')
+            ->with('i_quality_lvls')
+            ->with('m_shops')
+            ->with('stocks.shelves')
+            ->with('stocks.locations')
+            ->with('stocks')
+            ->get()->find($id);
+
+        $stockers  = Stock::whereHas(
+            'items',function($q) use ($item){
+            $q->where('items.id','=',$item->id);
+        }
+        )->where('serial','like',"%".$request->input('keywords')."%")->with('items')->paginate(10);
+
+        $mitemobj = $item->m_items->first();
+
+        if($mitemobj===null){
+            $mitemid = 0;
+        }else{
+            $mitemid = $mitemobj->id;
+        };
+
+        $mitem = M_item::with('m_makers')
+            ->with('i_categories.m_i_categories.m_i_category_dtls')
+            ->with('i_functions.m_i_function_dtls')
+            ->with('i_interfaces.m_i_interfaces')->get()->find($mitemid)
+        ;
+
+//        dd($item);
+
+
+        //表示系に必要なデータ一群
+        $makerinfor= M_maker::all();
+        $icategoryall= I_category::with('m_i_categories.m_i_category_dtls')->get();
+        $ifunctionall= I_function::with('m_i_function_dtls')->get();
+        $iinterfaceall=I_interface::with('m_i_interfaces')->get();
+        $isupplyall=I_supply::with('m_supplies')->get();
+
+        return view('masters.stockadd')
+            ->with('itemid',$id)
+            ->with('item',$item)
+            ->with('mitemid',$mitemid)
+            ->with('mitem',$mitem)
+            ->with('makerinfor',$makerinfor)
+            ->with('icategoryall',$icategoryall)
+            ->with('ifunctionall',$ifunctionall)
+            ->with('iinterfaceall',$iinterfaceall)
+            ->with('isupplyall',$isupplyall)
+            ->with('stockers',$stockers)
+            ;
+    }
+
 
 
     /**

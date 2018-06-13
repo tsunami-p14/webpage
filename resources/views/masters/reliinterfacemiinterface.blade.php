@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Interface 関連付けるよ</h1>
+    <h1>Interface relation</h1>
     <hr>
 
     @foreach($datas as $data)
