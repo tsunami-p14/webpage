@@ -5,7 +5,7 @@
     <hr>
     <article>
         <div class="info">
-            infor:
+            棚詳細:
             {{ $item->infor }}
         </div>
     </article>

@@ -2,7 +2,7 @@
         {{--Item Master START--}}
             <div class="card">
             <div class="card-header">
-                <span class="h4">Item Master</span>
+                <span class="h4">アイテムマスタ</span>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -10,23 +10,23 @@
                         <thead></thead>
                         <tbody>
                             <tr>
-                                <td style="text-align: left">typecoed</td>
+                                <td style="text-align: left">型番</td>
                                 <td><span class="h5">{{$mitem->typecode}}</span></td>
                             </tr>
                             <tr>
-                                <td style="text-align: left">scalse W</td>
+                                <td style="text-align: left">サイズ W</td>
                                 <td><span class="h5">{{$mitem->scale_w}}</span></td>
                             </tr>
                             <tr>
-                                <td style="text-align: left">scalse D</td>
+                                <td style="text-align: left">サイズ D</td>
                                 <td><span class="h5">{{$mitem->scale_d}}</span></td>
                             </tr>
                             <tr>
-                                <td style="text-align: left">scalse H</td>
+                                <td style="text-align: left">サイズ H</td>
                                 <td><span class="h5">{{$mitem->scale_h}}</span></td>
                             </tr>
                             <tr>
-                                <td style="text-align: left">Weight</td>
+                                <td style="text-align: left">重量</td>
                                 <td><span class="h5">{{$mitem->weight}}</span></td>
                             </tr>
                             <tr>
@@ -34,7 +34,7 @@
                                 <td><span class="h5">{{$mitem->m_makers->name}}</span> <small class="text-muted">{{$mitem->m_makers->infor}}</small></td>
                             </tr>
                             <tr>
-                                <td style="text-align: left">Category</td>
+                                <td style="text-align: left">カテゴリ</td>
                                 <td>
                                     {{$mitem->i_categories->name}}<br>
                                     <ul>
@@ -51,7 +51,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="text-align: left">Function</td>
+                                <td style="text-align: left">機能</td>
                                 <td>
                                     <span class="h5">{{$mitem->i_functions->name}}</span>
                                     <ul>
@@ -64,7 +64,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td style="text-align: left">Interface</td>
+                                <td style="text-align: left">インターフェイス</td>
                                 <td>
                                     <span class="h5">{{$mitem->i_interfaces->name}}</span>
                                     <ul>

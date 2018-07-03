@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <h1>Shop Master </h1>
+    <h1>ショップマスタ</h1>
     <hr>
     {!! link_to('mshops/create', '新規作成', ['class' => 'btn btn-primary']) !!}
     @foreach($items as $item)

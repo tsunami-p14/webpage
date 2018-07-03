@@ -8,7 +8,7 @@
     <article>
         <h1>{{ $item->name}}</h1>
         @unless ($item->locations->isEmpty())
-            <h5>Item Interfaces:</h5>
+            <h5>位置:</h5>
             <ul>
                 @foreach($item->locations as $location)
                     <li>{{ $location->name }}  {{ $location->infor}}</li>

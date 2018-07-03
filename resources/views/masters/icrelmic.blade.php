@@ -2,7 +2,8 @@
 
 @section('content')
 
-    <h1>Item Category Masters Relation </h1>
+    {{--<h1>Item Category Masters Relation </h1>--}}
+    <h1>アイテムカテゴリ と アイテムカテゴリマスタのリレーション </h1>
     <hr>
 
     {{--Vueのサンプル。--}}
@@ -32,9 +33,9 @@
                 <h5>マスタカテゴリ</h5>
                 <ul>
                     @foreach($data->m_i_categories as $m_i_category)
-                        <li>Name:{{ $m_i_category->name }} 詳細:{{ $m_i_category->infor}} </li>
+                        <li>マスタカテゴリ名:{{ $m_i_category->name }} 詳細:{{ $m_i_category->infor}} </li>
                         @unless($m_i_category->m_i_category_dtls->isEmpty())
-                            <h6>{{ $m_i_category->name }}のDTL</h6>
+                            <h6>{{ $m_i_category->name }}のディティール</h6>
                             <ul>
                                 @foreach($m_i_category->m_i_category_dtls as $m_i_category_dtl)
                                     <li>{{$m_i_category_dtl->name }} {{$m_i_category_dtl->infor}}</li>

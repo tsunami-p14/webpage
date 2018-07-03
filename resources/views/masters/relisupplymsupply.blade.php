@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Supply relation</h1>
+    <h1>付属品リレーション</h1>
     <hr>
 
     @foreach($items as $item)
@@ -13,7 +13,7 @@
             {{--</div>--}}
 
             @unless ($item->m_supplies->isEmpty())
-                <h5>Supply 詳細</h5>
+                <h5>付属品招待</h5>
                 <ul>
                     @foreach($item->m_supplies as $m_supply)
                         <li>{{ $m_supply->name }} 詳細:{{ $m_supply->infor}} </li>

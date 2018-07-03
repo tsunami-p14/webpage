@@ -12,10 +12,10 @@
                 <b-nav-item-dropdown text="Masters">
                     <b-dropdown-item href="/makers">Makers</b-dropdown-item>
                     <b-dropdown-item href="/micategories">カテゴリマスタ</b-dropdown-item>
-                    <b-dropdown-item href="/mifunctiondtls">カテゴリ詳細</b-dropdown-item>
+                    <b-dropdown-item href="/micategorydtls">カテゴリ詳細</b-dropdown-item>
                     <b-dropdown-item href="/icategories">カテゴリ</b-dropdown-item>
-                    <b-dropdown-item href="/mifunctiondtls">ファンクションマスタ</b-dropdown-item>
-                    <b-dropdown-item href="/ifunctions">ファンクション</b-dropdown-item>
+                    <b-dropdown-item href="/mifunctiondtls">機能詳細</b-dropdown-item>
+                    <b-dropdown-item href="/ifunctions">商品機能グループ</b-dropdown-item>
                     <b-dropdown-item href="/miinterface">インタフェイスマスタ</b-dropdown-item>
                     <b-dropdown-item href="/iinterface">インタフェイス</b-dropdown-item>
                     <b-dropdown-item href="/msupplies">サプライマスタ</b-dropdown-item>
@@ -24,7 +24,7 @@
                     <b-dropdown-item href="/iqualitylvls">クオリティグループ</b-dropdown-item>
                     <b-dropdown-item href="/mshops">ショップマスタ</b-dropdown-item>
                     <b-dropdown-item href="/shelves">棚マスタ</b-dropdown-item>
-                    <b-dropdown-item href="/locations">ロケーション</b-dropdown-item>
+                    <b-dropdown-item href="/locations">位置マスタ</b-dropdown-item>
 
                 </b-nav-item-dropdown>
 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Shelves relation</h1>
+    <h1>棚と位置</h1>
     <hr>
 
     @foreach($items as $item)
@@ -13,10 +13,10 @@
             {{--</div>--}}
 
             @unless ($item->locations->isEmpty())
-                <h5>Supply 詳細</h5>
+                <h5>位置</h5>
                 <ul>
                     @foreach($item->locations as $location)
-                        <li>{{ $location->name }} 詳細:{{ $location->infor}} </li>
+                        <li>{{ $location->name }} :{{ $location->infor}} </li>
                     @endforeach
                 </ul>
             @endunless

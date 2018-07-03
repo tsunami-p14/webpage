@@ -1,12 +1,12 @@
 @extends('layout')
 
 @section('content')
-    icategories
+    アイテムカテゴリー 作成
 
     @include ('errors.form_errors')
 
     {!! Form::model(null,['method' => 'post','url' => ['icategories'] ]) !!}
-    @include('masters.icategoryform',['submitButton' =>'Edit icategory'])
+    @include('masters.icategoryform',['submitButton' =>'submit アイテムカテゴリー'])
     {!! Form::close() !!}
 
 

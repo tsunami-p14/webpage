@@ -1,6 +1,6 @@
 <div class="form-group">
     <div class="form-group">
-        {!! Form::label('iqua_mqua', 'iqua_mqua:') !!}
+        {!! Form::label('iqua_mqua', 'クオリティマスタ:') !!}
         {!! Form::select('iqua_mqua[]', $mfncdtl, null, ['class' => 'form-control', 'multiple']) !!}
     </div>
 </div>

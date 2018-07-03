@@ -1,6 +1,6 @@
 <div class="form-group">
     <div class="form-group">
-        {!! Form::label('location_shelf', 'location_shelf:') !!}
+        {!! Form::label('location_shelf', '位置:') !!}
         {!! Form::select('location_shelf[]', $mfncdtl, null, ['class' => 'form-control', 'multiple']) !!}
     </div>
 </div>

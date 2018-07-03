@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <h1>Supplies </h1>
+    <h1>付属品 グループ </h1>
     <hr>
     {!! link_to('isupplies/create', '新規作成', ['class' => 'btn btn-primary']) !!}
     @foreach($items as $item)

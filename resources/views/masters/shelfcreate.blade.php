@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    Shelf Create
+    棚
 
     @include ('errors.form_errors')
 

@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    Quality Master Create
+    商品クオリティマスタ
 
     @include ('errors.form_errors')
 

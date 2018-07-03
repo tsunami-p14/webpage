@@ -1,5 +1,5 @@
 <div class="form-group">
-    {!! Form::label('name', 'name:') !!}
+    {!! Form::label('name', 'アイテムカテゴリ名:') !!}
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
     <div class="form-group">
         {{--{!! Form::label('mi_category', 'm_i_categories:') !!}--}}

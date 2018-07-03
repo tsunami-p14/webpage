@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    Micategories
+    アイテムカテゴリマスタ
 
     @include ('errors.form_errors')
 

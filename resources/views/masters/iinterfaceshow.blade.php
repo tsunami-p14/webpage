@@ -7,7 +7,7 @@
 
     <article>
         <div class="name">
-            name:
+            インターフェイス名:
             {{ $data->name}}
         </div>
     </article>

@@ -1,7 +1,8 @@
 @extends('layout')
 
 @section('content')
-    i function
+    {{--i function--}}
+    アイテム ファンクション
 
     @include ('errors.form_errors')
 

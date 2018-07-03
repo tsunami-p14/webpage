@@ -4,7 +4,7 @@
     <h1>{{$item->name}}</h1>
     <hr>
     <article>
-        <div class="score">
+        <div class="スコア">
             score:
             {{ $item->score }}
         </div>

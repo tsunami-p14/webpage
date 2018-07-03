@@ -55708,7 +55708,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h5", [_vm._v("Shops")])
+      _c("h5", [_vm._v("販売店")])
     ])
   }
 ]
@@ -55793,7 +55793,7 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "b-dropdown-item",
-                        { attrs: { href: "/mifunctiondtls" } },
+                        { attrs: { href: "/micategorydtls" } },
                         [_vm._v("カテゴリ詳細")]
                       ),
                       _vm._v(" "),
@@ -55806,13 +55806,13 @@ var render = function() {
                       _c(
                         "b-dropdown-item",
                         { attrs: { href: "/mifunctiondtls" } },
-                        [_vm._v("ファンクションマスタ")]
+                        [_vm._v("機能詳細")]
                       ),
                       _vm._v(" "),
                       _c(
                         "b-dropdown-item",
                         { attrs: { href: "/ifunctions" } },
-                        [_vm._v("ファンクション")]
+                        [_vm._v("商品機能グループ")]
                       ),
                       _vm._v(" "),
                       _c(
@@ -56246,7 +56246,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h5", [_vm._v("Item Master")])
+      _c("h5", [_vm._v("アイテムマスタ")])
     ])
   }
 ]
@@ -56563,7 +56563,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h5", [_vm._v("Item")])
+      _c("h5", [_vm._v("商品")])
     ])
   },
   function() {
@@ -56572,17 +56572,17 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("name")]),
+        _c("th", [_vm._v("商品名")]),
         _vm._v(" "),
-        _c("th", [_vm._v("id")]),
+        _c("th", [_vm._v("infor")]),
         _vm._v(" "),
-        _c("th", [_vm._v("supply")]),
+        _c("th", [_vm._v("付属品")]),
         _vm._v(" "),
-        _c("th", [_vm._v("shops")]),
+        _c("th", [_vm._v("販売店")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Quality")]),
+        _c("th", [_vm._v("クオリティ")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Stocks")]),
+        _c("th", [_vm._v("在庫")]),
         _vm._v(" "),
         _c("td", [_vm._v("Action")])
       ])
@@ -56652,10 +56652,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "card" }, [
-    _c("div", { staticClass: "card-header" }, [
-      _c("h5", [_vm._v("Supply")]),
-      _vm._v("\n        sply:" + _vm._s(_vm.getsupply) + "\n    ")
-    ]),
+    _vm._m(0),
     _vm._v(" "),
     _c(
       "div",
@@ -56698,7 +56695,16 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("h5", [_vm._v("付属品")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -56823,9 +56829,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header" }, [
-      _c("h5", [_vm._v("Shelvs")])
-    ])
+    return _c("div", { staticClass: "card-header" }, [_c("h5", [_vm._v("棚")])])
   }
 ]
 render._withStripped = true
@@ -56949,7 +56953,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h5", [_vm._v("Quality")])
+      _c("h5", [_vm._v("クオリティ")])
     ])
   }
 ]
@@ -56993,7 +56997,7 @@ var render = function() {
             }),
             _vm._v(" "),
             _c("div", [
-              _vm._v("\n                    name:"),
+              _vm._v("\n                    名前:"),
               _c("br"),
               _c("strong", [_vm._v(_vm._s(_vm.makers[_vm.selected]))]),
               _c("br")
@@ -57416,7 +57420,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h2", [_vm._v("category")])
+      _c("h2", [_vm._v("カテゴリ")])
     ])
   },
   function() {
@@ -57424,7 +57428,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h2", [_vm._v("Function")])
+      _c("h2", [_vm._v("機能")])
     ])
   },
   function() {
@@ -57432,7 +57436,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h2", [_vm._v("Interface")])
+      _c("h2", [_vm._v("インターフェイス")])
     ])
   },
   function() {
@@ -57440,7 +57444,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h2", [_vm._v("typecode")])
+      _c("h2", [_vm._v("型番")])
     ])
   },
   function() {
@@ -57448,7 +57452,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h2", [_vm._v("scale w")])
+      _c("h2", [_vm._v("サイズ w")])
     ])
   },
   function() {
@@ -57456,7 +57460,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h2", [_vm._v("scale d")])
+      _c("h2", [_vm._v("サイズ d")])
     ])
   },
   function() {
@@ -57464,7 +57468,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h2", [_vm._v("scale h")])
+      _c("h2", [_vm._v("サイズ h")])
     ])
   },
   function() {
@@ -57472,7 +57476,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h2", [_vm._v("weight")])
+      _c("h2", [_vm._v("重量")])
     ])
   }
 ]

@@ -14,7 +14,7 @@
     </div>
 
     <div>
-        <h5>Category:</h5>
+        <h5>カテゴリ:</h5>
         @unless ($data->i_categories=== null)
             <ul>
                <li>{{$data->i_categories->name}}</li>
@@ -41,7 +41,7 @@
     </div>
 
     <div>
-        <h5>Function:</h5>
+        <h5>機能:</h5>
         @unless ($data->i_functions=== null)
             <ul>
                 <li>
@@ -61,7 +61,7 @@
     </div>
 
     <div>
-        <h5>Interface:</h5>
+        <h5>インターフェイス:</h5>
         @unless($data->i_interfaces=== null)
             <ul>
                 <li>
@@ -84,19 +84,19 @@
 
 
         <div class="scalew">
-            Scale W:
+            サイズ W:
             {{ $data->scale_w}}
         </div>
         <div class="scaled">
-            Scale d:
+            サイズ d:
             {{ $data->scale_d}}
         </div>
         <div class="scaleh">
-            Scale h:
+            サイズ h:
             {{ $data->scale_h}}
         </div>
         <div class="weight">
-            weight:
+            重さ:
             {{ $data->weight}}
         </div>
 

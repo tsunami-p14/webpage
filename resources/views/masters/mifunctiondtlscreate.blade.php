@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    Mifunction DTLs
+    機能詳細マスタ
 
     @include ('errors.form_errors')
 

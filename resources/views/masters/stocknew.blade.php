@@ -19,7 +19,7 @@
     <div class="col-sm-12 col-md-8">
         <div class="card">
             <div class="card-header">
-                <span class="h4">Stocks Input/Edit</span>
+                <span class="h4">商品 入力/編集</span>
 
             </div>
             <div class="card-body">

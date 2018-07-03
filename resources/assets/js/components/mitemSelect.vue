@@ -3,7 +3,7 @@
     <!--<div class="col-sm-12" >-->
     <div class="card">
         <div class="card-header">
-            <h5>Item Master</h5>
+            <h5>アイテムマスタ</h5>
         </div>
         <div class="card-body">
             <b-form-select v-model="selmitems" :options="mitems" class="form-control" id="mitems" name="m_item_id" required

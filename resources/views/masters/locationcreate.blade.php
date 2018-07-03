@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    Location Create
+    位置
 
     @include ('errors.form_errors')
 

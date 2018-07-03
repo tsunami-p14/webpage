@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use TheSeer\Tokenizer\Token;
 
 class MakerRequest extends FormRequest
 {
@@ -27,6 +28,8 @@ class MakerRequest extends FormRequest
             //
             'name'=>'required',
             'name_a'=>'required',
+            'infor'=>'required',
         ];
     }
+
 }

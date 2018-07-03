@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <h1>Item Interfaces</h1>
+    <h1>インターフェイス</h1>
     <hr>
     {!! link_to('iinterface/create', '新規作成', ['class' => 'btn btn-primary']) !!}
     @foreach($datas as $data)

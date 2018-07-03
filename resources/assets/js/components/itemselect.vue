@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-header">
-            <h5>Item</h5>
+            <h5>商品</h5>
         </div>
 
         <!--Tableに仕様変更-->
@@ -33,12 +33,12 @@
                     <table v-if="getitems !== null" class="table table-responsive table-striped table-bordered">
                 <thead>
                 <tr>
-                    <th>name</th>
-                    <th>id</th>
-                    <th>supply</th>
-                    <th>shops</th>
-                    <th>Quality</th>
-                    <th>Stocks</th>
+                    <th>商品名</th>
+                    <th>infor</th>
+                    <th>付属品</th>
+                    <th>販売店</th>
+                    <th>クオリティ</th>
+                    <th>在庫</th>
                     <td>Action</td>
                 </tr>
                 </thead>

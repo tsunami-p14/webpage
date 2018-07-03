@@ -8,7 +8,7 @@
     <article>
         <h1>{{ $data->name}}</h1>
         @unless ($data->m_i_category_dtls->isEmpty())
-            <h5>m_i_category_dtls:</h5>
+            <h5>アイテムカテゴリマスタ 詳細:</h5>
             <ul>
                 @foreach($data->m_i_category_dtls as $m_i_category_dtl)
                     <li>{{ $m_i_category_dtl->name }} {{ $m_i_category_dtl->infor}} </li>

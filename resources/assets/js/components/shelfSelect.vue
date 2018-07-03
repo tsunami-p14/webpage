@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-header">
-            <h5>Shelvs</h5>
+            <h5>棚</h5>
         </div>
         <div class="card-body">
             <div v-if="getshelves !== null">

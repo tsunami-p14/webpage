@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card-header">
-            <h5>Quality</h5>
+            <h5>クオリティ</h5>
         </div>
         <div class="card-body">
             <div v-if="getqlvl !== null">

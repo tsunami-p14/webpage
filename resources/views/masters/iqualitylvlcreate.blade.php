@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    Quality Group Create
+    クオリティレベル グループ
 
     @include ('errors.form_errors')
 

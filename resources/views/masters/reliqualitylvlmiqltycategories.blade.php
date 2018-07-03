@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Quality GROUP relation</h1>
+    <h1>クオリティグループリレーション</h1>
     <hr>
 
     @foreach($items as $item)
@@ -13,7 +13,7 @@
             {{--</div>--}}
 
             @unless ($item->m_i_qlty_categories->isEmpty())
-                <h5>マスタ  詳細</h5>
+                <h5>クオリティマスタ</h5>
                 <ul>
                     @foreach($item->m_i_qlty_categories as $m_i_qlty_category)
                         <li>{{ $m_i_qlty_category->name }} {{ $m_i_qlty_category->score}} </li>

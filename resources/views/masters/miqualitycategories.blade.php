@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <h1>Quality Category Master</h1>
+    <h1>商品クオリティマスタ</h1>
     <hr>
     {!! link_to('miqualitycategories/create', '新規作成', ['class' => 'btn btn-primary']) !!}
     @foreach($items as $item)

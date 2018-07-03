@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Interface relation</h1>
+    <h1>インターフェイスリレーション</h1>
     <hr>
 
     @foreach($datas as $data)
@@ -13,7 +13,7 @@
             {{--</div>--}}
 
             @unless ($data->m_i_interfaces->isEmpty())
-                <h5>マスタ Interface 詳細</h5>
+                <h5>インターフェイスマスタ 詳細</h5>
                 <ul>
                     @foreach($data->m_i_interfaces as $m_i_interface)
                         <li>Name:{{ $m_i_interface->name }} 詳細:{{ $m_i_interface->infor}} </li>

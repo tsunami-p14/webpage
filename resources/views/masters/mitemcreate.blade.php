@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    Mitem Create
+    アイテムマスタ
 
     @include ('errors.form_errors')
 

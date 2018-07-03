@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    Shop Master Create
+    ショップマスタ
 
     @include ('errors.form_errors')
 

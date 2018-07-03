@@ -5,7 +5,7 @@
     <hr>
     <article>
         <div class="info">
-            infor:
+            機能詳細:
             {{ $data->infor }}
         </div>
     </article>

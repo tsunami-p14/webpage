@@ -21,15 +21,15 @@
                 <table class="table table-striped table-responsive">
                     <thead>
                     <tr>
-                        <th>Serial</th>
-                        <th>Selflg</th>
-                        <th>TypeCode</th>
-                        <th>item Name</th>
-                        <th>Quality</th>
-                        <th>Shelf</th>
-                        <th>Location</th>
-                        <th>Create</th>
-                        <th>update</th>
+                        <th>シリアル</th>
+                        <th>売却済み</th>
+                        <th>型番</th>
+                        <th>商品名</th>
+                        <th>クオリティ</th>
+                        <th>棚</th>
+                        <th>位置</th>
+                        <th>作成日</th>
+                        <th>修正日</th>
                         <th>Action</th>
                     </tr>
                     </thead>

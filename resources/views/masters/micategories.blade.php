@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <h1>Micategories</h1>
+    <h1>アイテムカテゴリマスタ</h1>
     <hr>
     {!! link_to('micategories/create', '新規作成', ['class' => 'btn btn-primary']) !!}
     @foreach($datas as $data)

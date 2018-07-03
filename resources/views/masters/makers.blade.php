@@ -8,7 +8,7 @@
         <article>
             <h2><a href="{{url('makers',$data->id)}}" >{{$data->name}}</a></h2>
             <div class="name_a">
-                Name_a:{{$data->name_a}}
+                よみがな:{{$data->name_a}}
             </div>
             <div class="infor">
                 詳細:{{$data->infor}}

@@ -7,11 +7,11 @@
 
     <article>
         <div class="info">
-            infor:
+            詳細:
             {{ $data->infor }}
         </div>
         <div class="sort_order">
-            :
+            ソート順番:
             {{ $data->sort_order }}
         </div>
     </article>

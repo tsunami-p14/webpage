@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    Item Create
+    在庫
 
     @include ('errors.form_errors')
 

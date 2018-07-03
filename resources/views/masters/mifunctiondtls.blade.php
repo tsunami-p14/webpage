@@ -1,17 +1,17 @@
 @extends('layout')
 
 @section('content')
-    <h1>M I Function DTL</h1>
+    <h1>機能詳細マスタ</h1>
     <hr>
     {!! link_to('mifunctiondtls/create', '新規作成', ['class' => 'btn btn-primary']) !!}
     @foreach($datas as $data)
         <article>
             <h2><a href="{{url('mifunctiondtls',$data->id)}}" >{{$data->name}}</a></h2>
             <div class="name">
-                name:{{$data->name}}
+                機能詳細名:{{$data->name}}
             </div>
             <div class="name">
-                infor:{{$data->infor}}
+                詳細内容:{{$data->infor}}
             </div>
 
             {{--追加--}}

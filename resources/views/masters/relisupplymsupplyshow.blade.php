@@ -8,7 +8,7 @@
     <article>
         <h1>{{ $item->name}}</h1>
         @unless ($item->m_supplies->isEmpty())
-            <h5>Item Interfaces:</h5>
+            <h5>付属品詳細:</h5>
             <ul>
                 @foreach($item->m_supplies as $m_supply)
                     <li>{{ $m_supply->name }} {{ $m_supply->infor}} </li>

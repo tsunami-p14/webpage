@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    Mitem Create
+    付属品 グループ
 
     @include ('errors.form_errors')
 

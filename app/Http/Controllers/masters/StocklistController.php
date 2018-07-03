@@ -40,6 +40,7 @@ class StocklistController extends Controller
             ->orderBy("updated_at","desc")
             ->paginate(30);
 
+
 //        $stocks=Stock::with("items.m_items.m_makers")
 //            ->get();
 

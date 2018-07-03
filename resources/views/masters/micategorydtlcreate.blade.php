@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    Micategories DTL
+    アイテムカテゴリマスタ詳細
 
     @include ('errors.form_errors')
 

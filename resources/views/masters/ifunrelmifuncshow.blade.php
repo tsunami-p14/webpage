@@ -8,7 +8,7 @@
     <article>
         <h1>{{ $data->name}}</h1>
         @unless ($data->m_i_function_dtls->isEmpty())
-            <h5>m_i_function_dtls:</h5>
+            <h5>機能詳細:</h5>
             <ul>
                 @foreach($data->m_i_function_dtls as $m_i_function_dtl)
                     <li>{{ $m_i_function_dtl->name }} {{ $m_i_function_dtl->infor}} </li>

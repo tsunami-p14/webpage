@@ -4,7 +4,7 @@
     <div class="form-group">
         {{--{!! Form::label('mi_category', 'm_i_categories:') !!}--}}
         {{--{!! Form::select('mi_category[]', $mic, null, ['class' => 'form-control', 'multiple']) !!}--}}
-        {!! Form::label('mi_categorydtl', 'm_i_categories_dtl:') !!}
+        {!! Form::label('mi_categorydtl', 'アイテムカテゴリマスタ 詳細:') !!}
         {!! Form::select('mi_categorydtl[]', $micdtl, null, ['class' => 'form-control', 'multiple']) !!}
     </div>
 </div>

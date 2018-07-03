@@ -17,7 +17,7 @@
                     <b-form-select v-model="selected" :options="makers" class="form-control" id="makers"
                                    name="m_maker_id"/>
                     <div>
-                        name:<br><strong>{{makers[selected]}}</strong><br>
+                        名前:<br><strong>{{makers[selected]}}</strong><br>
                     </div>
                     <div>
                         詳細:<br><strong>{{makerinfor[selected]}}</strong>
@@ -29,7 +29,7 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-header">
-                    <h2>category</h2>
+                    <h2>カテゴリ</h2>
                 </div>
                 <div class="card-body">
                     <b-form-select v-model="selcategory" :options="icategory" class="form-control"
@@ -67,7 +67,7 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-header">
-                    <h2>Function</h2>
+                    <h2>機能</h2>
                 </div>
                 <div class="card-body">
                     <b-form-select v-model="selfunction" :options="ifunction" class="form-control"
@@ -97,7 +97,7 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-header">
-                    <h2>Interface</h2>
+                    <h2>インターフェイス</h2>
                 </div>
                 <div class="card-body">
                     <b-form-select v-model="selinterface" :options="iinterface" class="form-control"
@@ -127,7 +127,7 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-header">
-                    <h2>typecode</h2>
+                    <h2>型番</h2>
                 </div>
                 <div class="card-body">
                     <b-form-input id="typecode"
@@ -144,7 +144,7 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-header">
-                    <h2>scale w</h2>
+                    <h2>サイズ w</h2>
                 </div>
                 <div class="card-body">
                     <b-form-input id="scale_w"
@@ -163,7 +163,7 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-header">
-                    <h2>scale d</h2>
+                    <h2>サイズ d</h2>
                 </div>
                 <div class="card-body">
                     <b-form-input id="scale_d"
@@ -181,7 +181,7 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-header">
-                    <h2>scale h</h2>
+                    <h2>サイズ h</h2>
                 </div>
                 <div class="card-body">
                     <b-form-input id="scale_h"
@@ -200,7 +200,7 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-header">
-                    <h2>weight</h2>
+                    <h2>重量</h2>
                 </div>
                 <div class="card-body">
                     <b-form-input id="weight"

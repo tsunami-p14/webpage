@@ -2,7 +2,8 @@
 
 @section('content')
 
-    <h1>Function Detail relation</h1>
+    {{--<h1>Function Detail relation</h1>--}}
+    <h1>商品機能詳細のリレーション</h1>
     <hr>
 
     @foreach($datas as $data)
@@ -13,7 +14,8 @@
             {{--</div>--}}
 
             @unless ($data->m_i_function_dtls->isEmpty())
-                <h5>マスタファンクション詳細</h5>
+                {{--<h5>マスタファンクション詳細</h5>--}}
+                <h5>機能マスタ詳細</h5>
                 <ul>
                     @foreach($data->m_i_function_dtls as $m_i_function_dtl)
                         <li>Name:{{ $m_i_function_dtl->name }} 詳細:{{ $m_i_function_dtl->infor}} </li>

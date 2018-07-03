@@ -7,11 +7,11 @@
 
     <article>
         <div class="name_a">
-            Name_a:
+            名前:
             {{ $data->name_a }}
         </div>
         <div class="info">
-            infor:
+            よみがな:
             {{ $data->infor }}
         </div>
     </article>

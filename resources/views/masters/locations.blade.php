@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <h1>Locations</h1>
+    <h1>位置</h1>
     <hr>
     {!! link_to('locations/create', '新規作成', ['class' => 'btn btn-primary']) !!}
     @foreach($items as $item)

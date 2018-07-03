@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    Item Interface
+    インターフェイス
 
     @include ('errors.form_errors')
 

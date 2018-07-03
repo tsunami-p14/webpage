@@ -15,18 +15,18 @@
         <div class="col-sm-12 col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <span class="h4">Stocks Input/Edit</span>
+                    <span class="h4">在庫 追加/編集</span>
 
                 </div>
                 <div class="card-body">
                     <div class="form-group">
-                        {!! Form::label('serial', 'serial:') !!}
+                        {!! Form::label('serial', 'シリアル番号:') !!}
                         {!! Form::text('serial', $stock->serial, ['class' => 'form-control']) !!}
                     </div>
                     <div class="form-group form-check">
                         {{ Form::hidden('selflg', '0') }}
                         {!! Form::checkbox('selflg', true,$stock->selflg, ['class' => 'form-check-input']) !!}
-                        {!! Form::label('selflg', 'selflg:', ['class' => 'form-check-label'] ) !!}
+                        {!! Form::label('selflg', '売却済み:', ['class' => 'form-check-label'] ) !!}
                     </div>
 
                     <shelf-select :shelfid="{{$stockshelf_id}}" :locationid="{{$stocklocation_id}}"></shelf-select>

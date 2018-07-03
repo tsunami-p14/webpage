@@ -7,7 +7,7 @@
 
     <article>
         <div class="info">
-            infor:
+            詳細:
             {{ $data->infor }}
         </div>
     </article>

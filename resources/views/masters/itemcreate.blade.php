@@ -17,7 +17,7 @@
                 <div class="col-12 col-md-7">
                     <div class="card">
                         <div class="card-header">
-                            {!! Form::label('name', 'name:') !!}
+                            {!! Form::label('name', '商品名:') !!}
                         </div>
                         <div class="card-body">
                             {!! Form::text('name', null, ['class' => 'form-control']) !!}
@@ -28,7 +28,7 @@
                 <div class="col-12 col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            {!! Form::label('infor', 'infor:') !!}
+                            {!! Form::label('infor', '詳細:') !!}
                         </div>
                         <div class="card-body">
                             {!! Form::textarea('infor', null, ['class' => 'form-control','row'=>'30','col'=>'3']) !!}

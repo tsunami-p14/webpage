@@ -1,9 +1,9 @@
 <div class="form-group">
-    {!! Form::label('name', 'name:') !!}
+    {!! Form::label('name', 'クオリティ名:') !!}
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('score', 'score:') !!}
+    {!! Form::label('score', 'クオリティのスコア値:') !!}
     {!! Form::text('score', null, ['class' => 'form-control']) !!}
 </div>
 

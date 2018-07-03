@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <h1>Category MASTER Detail relation</h1>
+    <h1>カテゴリマスタ の リレーション</h1>
     <hr>
     {{--{!! link_to('micrelmicdtl/create', '新規作成', ['class' => 'btn btn-primary']) !!}--}}
     @foreach($datas as $data)
@@ -12,7 +12,7 @@
             {{--</div>--}}
 
             @unless ($data->m_i_category_dtls->isEmpty())
-            <h5>m_i_category_dtls:</h5>
+            <h5>アイテムカテゴリマスタ 詳細:</h5>
             <ul>
             @foreach($data->m_i_category_dtls as $m_i_category_dtl)
             <li>{{ $m_i_category_dtl->name }} {{ $m_i_category_dtl->infor}} </li>

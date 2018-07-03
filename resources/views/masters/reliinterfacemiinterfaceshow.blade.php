@@ -8,7 +8,7 @@
     <article>
         <h1>{{ $data->name}}</h1>
         @unless ($data->m_i_interfaces->isEmpty())
-            <h5>Item Interfaces:</h5>
+            <h5>インターフェイスマスタ:</h5>
             <ul>
                 @foreach($data->m_i_interfaces as $m_i_interface)
                     <li>{{ $m_i_interface->name }} {{ $m_i_interface->infor}} </li>

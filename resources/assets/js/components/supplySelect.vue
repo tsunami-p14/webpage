@@ -1,8 +1,8 @@
 <template>
     <div class="card">
         <div class="card-header">
-            <h5>Supply</h5>
-            sply:{{getsupply}}
+            <h5>付属品</h5>
+            <!--sply:{{getsupply}}-->
         </div>
         <div class="card-body">
             <b-form-select v-model="selisupply" :options="isupplies" class="form-control" id="isupplies" name="i_supply_id" required @input="selectedSupply"/>

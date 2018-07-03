@@ -1,13 +1,13 @@
 <div class="form-group">
-    {!! Form::label('name', 'name:') !!}
+    {!! Form::label('name', 'カテゴリ名:') !!}
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('infor', 'infor:') !!}
+    {!! Form::label('infor', '詳細:') !!}
     {!! Form::text('infor', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('sort_order', 'sort_order:') !!}
+    {!! Form::label('sort_order', 'ソート順番:') !!}
     {!! Form::text('sort_order', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">

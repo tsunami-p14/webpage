@@ -5,7 +5,7 @@
     <hr>
     <article>
         <div class="info">
-            infor:
+            インタフェイス詳細:
             {{ $data->infor }}
         </div>
     </article>

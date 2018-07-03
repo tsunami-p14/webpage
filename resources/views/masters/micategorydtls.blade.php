@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <h1>Micategories DTL</h1>
+    <h1>アイテムカテゴリマスタ 詳細</h1>
     <hr>
     {!! link_to('micategorydtls/create', '新規作成', ['class' => 'btn btn-primary']) !!}
     @foreach($datas as $data)

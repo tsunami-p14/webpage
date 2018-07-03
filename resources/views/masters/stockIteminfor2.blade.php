@@ -1,21 +1,21 @@
 <div class="col-sm-12 col-md-8">
     <div class="card">
         <div class="card-header">
-            <span class="h4">Item</span>
+            <span class="h4">商品</span>
         </div>
         <div class="card-body">
             <div>
                 <table class="table">
                     <tr>
-                        <td>name</td>
+                        <td>商品名</td>
                         <td><span class="h5">{{$item->name}}</span></td>
                     </tr>
                     <tr>
-                        <td>infor</td>
+                        <td>情報</td>
                         <td><span class="h5">{{$item->infor}}</span></td>
                     </tr>
                     <tr>
-                        <td>Supply</td>
+                        <td>付属品</td>
                         <td>
                             @foreach($item->i_supplies as $ispl)
                                 <ul>
@@ -33,7 +33,7 @@
                     </tr>
 
                     <tr>
-                        <td>Shops</td>
+                        <td>販売店</td>
                         <td>
                             @foreach($item->m_shops as $mshops)
                                 <ul>
@@ -45,7 +45,7 @@
                     </tr>
 
                     <tr>
-                        <td>Quality</td>
+                        <td>クオリティ</td>
                         <td>
                             @foreach($item->i_quality_lvls as $miqc)
                                 <span class="h5">{{$miqc->name}}</span> <small class="text-muted">{{$miqc->infor}}</small>
@@ -85,12 +85,12 @@
                 <table class="table table-striped">
                     <thead class="text-center">
                     <tr>
-                        <th>Serial</th>
-                        <th>Selflg</th>
-                        <th>Shelf</th>
-                        <th>Location</th>
-                        <th>create</th>
-                        <th>update</th>
+                        <th>シリアル</th>
+                        <th>売却済み</th>
+                        <th>棚</th>
+                        <th>位置</th>
+                        <th>作成日</th>
+                        <th>編集日</th>
                         <th>Action</th>
                     </tr>
                     </thead>

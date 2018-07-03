@@ -34,6 +34,7 @@ class M_maker extends Model
 {
 
     use SoftDeletes;
+
     //
     /**
      * 日付へキャストする属性
@@ -43,6 +44,13 @@ class M_maker extends Model
     protected $dates = ['deleted_at'];
     protected $fillable = ['name', 'name_a', 'infor'];
 
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($token) {
+            $token->infor=" ";
+        });
 
 
+    }
 }

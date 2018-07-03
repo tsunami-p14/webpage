@@ -1,9 +1,9 @@
 <div class="form-group">
-    {!! Form::label('name', 'name:') !!}
+    {!! Form::label('name', '名前:') !!}
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('name_a', 'name_a:') !!}
+    {!! Form::label('name_a', 'よみがな:') !!}
     {!! Form::text('name_a', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">

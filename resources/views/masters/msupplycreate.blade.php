@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    Supply Master Create
+    付属品マスタ
 
     @include ('errors.form_errors')
 

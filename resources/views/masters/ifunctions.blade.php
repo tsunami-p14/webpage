@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <h1>Item Functions</h1>
+    <h1>商品機能</h1>
     <hr>
     {!! link_to('ifunctions/create', '新規作成', ['class' => 'btn btn-primary']) !!}
     @foreach($datas as $data)
